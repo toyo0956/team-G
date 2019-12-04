@@ -43,7 +43,7 @@ set :repo_url, "git@example.com:me/my_repo.git"
 lock '3.11.2'
 
 # Capistranoのログの表示に利用する
-set :application, 'mercariApp'
+set :application, 'team-G'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:NishiguchiHiroki/team-G.git'
