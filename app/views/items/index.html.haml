@@ -1,5 +1,8 @@
 .top-page
   = render 'header'
   .top-page__section-pic
-  .top-page__main
+  = render 'main'
+  = link_to '#', class: 'red-btn' do
+    %p 出品
+    %i.fas.fa-camera
   = render 'footer'
