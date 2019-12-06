@@ -12,7 +12,9 @@
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|birthday|string|null: false|
+|birthdate_year|string|null: false|
+|birthdate_month|string|null: false|
+|birthdate_day|string|null: false|
 |phone_number|string||
 
 ### Association
