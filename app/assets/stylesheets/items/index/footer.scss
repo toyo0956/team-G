@@ -20,7 +20,7 @@ footer {
       li > a {
         text-decoration: none;
         color: lightgray;
-        font-size: 12px;
+        font-size: 13px;
       }
       li > a:hover {
         text-decoration: underline;
@@ -81,7 +81,6 @@ footer {
         p {
           font-size: 12px;
           color: $white;
-          // margin: 0 auto;
           position: relative;
           left: 17%;
           line-height: 50px;

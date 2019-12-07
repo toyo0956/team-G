@@ -1,8 +1,8 @@
 .top-page
-  = render 'header'
+  = render 'header.index'
   .top-page__section-pic
   = render 'main'
-  = link_to '#', class: 'red-btn' do
+  = link_to new_item_path, class: 'red-btn' do
     %p 出品
     %i.fas.fa-camera
   = render 'footer'
