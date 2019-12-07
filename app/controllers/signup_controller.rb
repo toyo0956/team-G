@@ -42,7 +42,8 @@ class SignupController < ApplicationController
       session[:id] = @user.id
       redirect_to done_signup_index_path
     else
-      redirect_to root_path
+      reset_session
+      redirect_to step1_signup_index_path
     end
   end
 
