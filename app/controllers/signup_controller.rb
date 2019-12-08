@@ -55,9 +55,7 @@ class SignupController < ApplicationController
       building_name: session[:building_name]
     )
 
-    @address.save
-    
-    @card = Card.create(
+    @card = Card.new(
       user: @user,
       card_number: card_params[:card_number],
       expiration_month: card_params[:expiration_month],
@@ -65,7 +63,7 @@ class SignupController < ApplicationController
       security_cord: card_params[:security_cord]
     )
 
-    if @card.save
+    if @address.save && @card.save
       reset_session
       session[:id] = @user.id
       redirect_to done_signup_index_path
