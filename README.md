@@ -128,8 +128,10 @@
 |------|----|-------|
 |id|integer|null: false, unique: true|
 |user_id|integer|null: false, foreign_key: true|
-|customer_id|integer|null: false|
-|card_id|integer|null: false, foreign_key: true|
+|card_number|string|null: false|
+|expiration_month|string|null: false|
+|expiration_year|string|null: false|
+|security_cord|string|null: false|
 
 ### Association
 - belongs_to : user

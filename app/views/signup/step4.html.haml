@@ -1,2 +1,7 @@
 %h1 step4
-= link_to 'create', signup_index_path, method: :post, class: 'create__btn'
+= form_for @card, url: signup_index_path, method: :post, html: {class: 'fortn-main__box'} do |f|
+  = f.text_field :card_number, placeholder: '例) '
+  = f.text_field :expiration_month, placeholder: '例) '
+  = f.text_field :expiration_year, placeholder: '例) '
+  = f.text_field :security_cord, placeholder: '例) '
+  = f.submit 'Send', class: 'form__submit'

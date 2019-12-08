@@ -1,8 +1,8 @@
 class SignupController < ApplicationController
 
-  before_action :save_to_session_step1, only: :step2
-  before_action :save_to_session_step2, only: :step3
-  before_action :save_to_session_step3, only: :step4
+  #before_action :save_to_session_step1, only: :step2 後のvalidationチェックで使う
+  #before_action :save_to_session_step2, only: :step3
+  #before_action :save_to_session_step3, only: :step4
 
   def step1
     @user = User.new
@@ -17,13 +17,14 @@ class SignupController < ApplicationController
   end
 
   def step4
-
+    @card = Card.new
   end
 
   def done
     sign_in User.find(session[:id]) unless user_signed_in?
   end
 
+  #一括保存
   def create
     @user = User.new(
     nickname: session[:nickname],
@@ -45,7 +46,7 @@ class SignupController < ApplicationController
       redirect_to step1_signup_index_path
     end
 
-    @address = Address.create(
+    @address = Address.new(
       user: @user,
       postal_code: session[:postal_code],
       prefacture: session[:prefacture],
@@ -54,7 +55,17 @@ class SignupController < ApplicationController
       building_name: session[:building_name]
     )
 
-    if @address.save
+    @address.save
+    
+    @card = Card.create(
+      user: @user,
+      card_number: card_params[:card_number],
+      expiration_month: card_params[:expiration_month],
+      expiration_year: card_params[:expiration_year],
+      security_cord: card_params[:security_cord]
+    )
+
+    if @card.save
       reset_session
       session[:id] = @user.id
       redirect_to done_signup_index_path
@@ -76,10 +87,12 @@ class SignupController < ApplicationController
     session[:birthdate_year] = user_params[:birthdate_year]
     session[:birthdate_month] = user_params[:birthdate_month]
     session[:birthdate_day] = user_params[:birthdate_day]
+    redirect_to step2_signup_index_path
   end
 
   def save_to_session_step2
     session[:phone_number] = user_params[:phone_number]
+    redirect_to step3_signup_index_path
   end
 
   def save_to_session_step3
@@ -88,6 +101,7 @@ class SignupController < ApplicationController
     session[:city] = address_params[:city]
     session[:house_number] = address_params[:house_number]
     session[:building_name] = address_params[:building_name]
+    redirect_to step4_signup_index_path
   end
 
   private
@@ -116,6 +130,15 @@ class SignupController < ApplicationController
         :city,
         :house_number,
         :building_name
+      )
+    end
+
+    def card_params
+      params.require(:card).permit(
+        :card_number,
+        :expiration_month,
+        :expiration_year,
+        :security_cord
       )
     end
 end
