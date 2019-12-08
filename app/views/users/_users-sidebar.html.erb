@@ -1,0 +1,171 @@
+
+<%# -----------------------sidebar始まり-----------------------------------%>
+
+<div class="mypage-sidebar">
+　　　　　　　
+  <div class="mypage-sidebar__container">
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title" id="sidebar-active">
+      <h2 class="weight">マイページ</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+    <% end %>
+
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title">
+      <h2>お知らせ</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+    <% end %>
+    
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title">
+      <h2>やること一覧</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+    <% end %>
+
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title">
+      <h2>出品する</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+    <% end %>
+
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title">
+      <h2>出品した商品・出品中</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+     <% end %>
+
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title">
+      <h2>出品した商品・取引中</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+    <% end %>
+
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title">
+      <h2>出品した商品・売却済み</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+     <% end %>
+
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title">
+      <h2>購入した商品・取引中</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+    <% end %>
+
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title">
+      <h2>出品した商品・過去の取引</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+    <% end %>
+
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title">
+      <h2>ニュース一覧</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+    <% end %>
+
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title">
+      <h2>評価一覧</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+    <% end %>
+
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title">
+      <h2>ガイド</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+    <% end %>
+
+    <%= link_to  do %>
+    <div class="mypage-sidebar__container__title">
+      <h2>お問い合わせ</h2>
+      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </div>
+    <% end %>
+
+    
+    <div class="sidebar-settlement">  <%# 決済ページへ遷移する（見本ではメルペイ部分） %>
+    　<p>メルペイ</p>
+      <%= link_to  do %>
+      <div class="mypage-sidebar__container__title">
+        <h2>残高</h2>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </div>
+      <% end %>
+
+      <%= link_to  do %>
+      <div class="mypage-sidebar__container__title">
+        <h2>ポイント</h2>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="sidebar-config">  <%# 設定ページへ遷移する（見本では設定部分） %>
+      <p>設定</p>
+      <%= link_to  do %>
+      <div class="mypage-sidebar__container__title">
+        <h2>プロフィール</h2>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </div>
+      <% end %>
+
+      <%= link_to  do %>
+      <div class="mypage-sidebar__container__title">
+        <h2>発送元・お届け先住所変更</h2>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </div>
+      <% end %>
+
+      <%= link_to  do %>
+      <div class="mypage-sidebar__container__title">
+          <h2>支払い方法</h2>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </div>
+      <% end %>
+
+      <%= link_to  do %>
+      <div class="mypage-sidebar__container__title">
+        <h2>メール/パスワード</h2>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </div>
+      <% end %>
+
+      <%= link_to  do %>
+      <div class="mypage-sidebar__container__title">
+        <h2>本人情報</h2>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </div>
+      <% end %>
+
+      <%= link_to  do %>
+      <div class="mypage-sidebar__container__title">
+        <h2>電話番号の確認</h2>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </div>
+      <% end %>
+
+      <%= link_to destroy_user_session_path, method: :destroy do %>
+      <div class="mypage-sidebar__container__title">
+          <h2>ログアウト</h2>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </div>
+      <% end %>
+
+    </div>
+  </div><%# mypage-sidebar__container終わり%>
+
+</div><%# mypage-sidebar終わり%>
+<%# -------------------------sidebar終わり---------------------------------------%>

@@ -14,117 +14,23 @@
 </div>
 <%# -----------------------navigation終わり-------------------------------%>
 
+<div class="mypage">
+<div class="mypage__main">
 
-<%# -----------------------sidebar始まり-----------------------------------%>
-<div class="mypage-sidebar">
-　　　　　　　
-  <div class="mypage-sidebar__container">
-    <div class="mypage-sidebar__container__title">
-      <%= link_to  do %>
-        <h2>マイページ</h2>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      <% end %>
-    </div>
+<%# -----------------------users-sidebar始まり-----------------------------------%>
 
-    <div class="mypage-sidebar__container__title">
-      <%= link_to  do %>
-        <h2>お知らせ</h2>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-      <% end %>
-    </div>
-    
-    <div class="sidebar-settlement">  <%# 決済ページへ遷移する（見本ではメルペイ部分） %>
-    　<p>メルペイ</p>
-      <div class="mypage-sidebar__container__title">
-        <%= link_to  do %>
-          <h2>残高</h2>
-          <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <% end %>
-      </div>
-    </div>
+  <%= render "users-sidebar"%>
 
-    <div class="sidebar-config">  <%# 設定ページへ遷移する（見本では設定部分） %>
-      <p>設定</p>
-      <div class="mypage-sidebar__container__title">
-        <%= link_to  do %>
-          <h2>プロフィール</h2>
-          <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <% end %>
-      </div>
-    </div>
-  </div><%# mypage-sidebar__container終わり%>
+<%# -----------------------users-sidebar終わり-----------------------------------%>
+
+<%# -----------------------users-information始まり-----------------------------------%>
+
+  <%= render "users-information"%>
+
+<%# -----------------------users-information終わり-----------------------------------%>
 
 </div>
-<%# -------------------------sidebar終わり---------------------------------------%>
-
-
-<%# -------------------------information始まり-----------------------------------%>
-<div class="mypage-information">
-
-  <div class="mypage-information__header">
-    <div class="mypage-information__header__profile">
-      <%= link_to "" do%>
-        <%= image_tag "sample1.jpg" %><%# usersモデルのimageをmigrationファイルに入れる%>
-        <p>テストネーム</p><%#<%= @users.nickname(current_user)%>
-      <div class="mypage-information__header__profile__transaction">
-        <p>評価&nbsp;100</p><%# usersモデルの評価変数をmigrationファイルに入れる%>
-        <p>出品数&nbsp;100</p><%# usersモデルの出品数変数をmigrationファイルに入れる%>
-      </div>
-      <% end %>
-    </div>
-  </div><%# mypage-information__header終わり%>
-  
-  <div class="mypage-information__container">
-    <div class="mypage-information__container__heading">
-      <input type="button" value="お知らせ" id="mypage-heading1">
-      <input type="button" value="やることリスト" id="mypage-heading2">
-    </div>
-
-    <div class="mypage-information__container__contents" id="mypage-content">
-      <div class="mypage-information__container__contents__content">
-        <%= image_tag "sample1.jpg" %>
-        <p>いいねしました。</p><%# likestableができたら、誰が（複数）何（商品）にいいねしました!!!を変数で記入%>
-        <i class="fa fa-clock" aria-hidden="true"></i>
-        <p>22時間</p><%# <%= user.created_at.strftime('%d %H') %>
-      </div>  <%# mypage-information__container__contents__content終わり%>
-
-      <div class="mypage-information__container__contents__content">
-        <%= link_to  do %>
-          <input type="button" value="一覧を見る" id="mypage-details">
-        <% end %>
-      </div><%# mypage-information__container__contents__content終わり%>
-    </div><%# mypage-information__container__contents終わり%>
-    
-  <div class="mypage-transaction">
-    <h3>購入した商品</h3>
-    <div class="mypage-information__container">
-    <div class="mypage-information__container__heading" id="mypage-heading">
-      <input type="button" value=" 取引中" id="mypage-transaction1">
-      <input type="button" value="過去の取引" id="mypage-transaction2">
-    </div>
-
-    <div class="mypage-information__container__contents" id="mypage-content">
-      <div class="mypage-information__container__contents__content">
-        <%= image_tag "sample1.jpg" %>
-        <p>取引が完了しました</p><%#  orders_table出来たら<%= 「item.name"」を購入しました。&nbsp;取引が完了しました% >  に変更%>
-        <p>取引完了</p>
-      </div></div><%# mypage-information__container__contents__content終わり%>
-
-      <div class="mypage-information__container__contents__content">
-        <div class="mypage-information__container__contents__content__details">
-          <input type="button" value="一覧を見る" id="mypage-transaction-details">
-        </div>
-      </div><%# mypage-information__container__contents__content終わり%>
-    </div><%# mypage-information__container__contents終わり%>
-
-
-  </div><%# mypage-information__container終わり%>
-  </div><%# mypage-transaction終わり%>
-
-</div><%# mypage-informatio終わり%>
-
-<%# -------------------------information終わり-----------------------------------%>
-
+</div>
 
 
 
