@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
   root to: 'items#index'
   resources :users 
+  resources :items, only: [:new]
 end

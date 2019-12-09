@@ -1,0 +1,18 @@
+.new-page__header {
+  width: 100vw;
+  height: 150px;
+  text-align: center;
+  &-logo {
+    height: 40%;
+    position: relative;
+    top: 50px;
+    display: inline-block;
+    margin: 0 auto;
+  }
+  a {
+    display: inline;
+  }
+  a:hover {
+    opacity: .8;
+  }
+} 
