@@ -4,12 +4,14 @@ class UsersController < ApplicationController
   end
 
   def show
+    @users = User.all
   end
 
   def edit
-    @users = User.all
+    @users = User.find(params[:id])
   end
 
   def destroy
   end
+  
 end
