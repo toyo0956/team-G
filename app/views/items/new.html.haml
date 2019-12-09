@@ -151,17 +151,17 @@
             %p -
       .new-page__main__form.sell-item
         %p.line-1
-          %a{href: '#'} 禁止されている出品
+          = link_to '禁止されている出品', '#'
           %p 、
-          %a{href: '#'} 行為
+          = link_to '行為', '#'
           %p を必ずご確認ください。
         %p.line-2
           %p またブランド品でシリアルナンバー等がある場合はご記載ください。
-          %a{href: '#'} 偽ブランドの販売
+          = link_to '偽ブランドの販売', '#'
           %p は犯罪であり処罰される可能性があります。
         %p.line-4
           %p また、出品をもちまして
-          %a{href: '#'} 加盟店規約
+          = link_to '加盟店規約', '#'
           %p に同意したことになります。
         = link_to '出品する', '#', class: 'sell-btn'
         = link_to 'もどる', '#', class: 'back-btn'
