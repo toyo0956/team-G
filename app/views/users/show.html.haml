@@ -1,0 +1,9 @@
+#mypage-content.mypage-information__container__contents
+  .mypage-information__container__contents__content
+    = image_tag "sample1.jpg", width:"48px", height:"48px"
+    .mypage-information__container__contents__content__detail
+      %p いいねしました。
+      %time.mypage-time
+        %i.fa.fa-clock{"aria-hidden" => "true"}
+        %p 22時間
+    %i.fa.fa-chevron-right{"aria-hidden" => "true"}

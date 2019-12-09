@@ -1,0 +1,248 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+header {
+  box-shadow: none;
+}
+
+
+a {
+  color:rgb(51,51,51);
+  text-decoration: none;
+}
+
+.navigation{
+  position: relative;
+  width:100%;
+  height:49px;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+   -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+   -moz-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+
+  &__container {
+    width:1020px;
+    margin:0 auto;
+    line-height: 49px;
+
+  &__content a{
+    text-decoration: none;
+    list-style: none;
+    color:rgb(51,51,51);
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  &__content i {
+    color:rgb(136,136,136);
+    font-size: 14px;
+  }
+
+  &__content a span:last-child{
+    font-weight: 600;
+  }
+ }
+}
+
+.mypage {
+  width:100%;
+  height:100%;
+  background: rgb(245, 245, 245);
+  
+&__main{
+  width:1020px;
+  overflow: hidden;
+  margin:0 auto;
+  padding:40px 0;
+ }
+}
+
+.mypage-sidebar {
+  float: left;
+  display: block;
+  margin-top: -18px;
+  max-width:320px;
+  width:100%;
+
+  &__container {
+    margin-right:40px;
+  
+  &__title {
+    height:48px;
+    background-color: #fff;
+    line-height: 16px;
+    padding:16px;
+    box-sizing: border-box;
+    border-bottom:1px solid #eee;
+
+  h2 {
+    float:left;
+    color:rgb(51,51,51);
+  }
+
+  .weight {  //マイページの文章み適用
+    font-weight:600;
+  }
+
+  i {
+    float:right;
+    line-height: 16px;
+    color:rgb(51,51,51);
+  }
+  &:hover i{
+    transform:translateX(5px);
+    transition-duration:0.3s;
+    }
+  }
+ }
+}
+#sidebar-active {
+  background-color: #eee;
+}
+
+
+.sidebar-settlement p {
+  margin-top:20px;
+  font-weight:600;
+}
+
+.sidebar-config p {
+  margin-top:40px;
+  font-weight:600;
+}
+
+.mypage-information {
+  float: left;
+  max-width:700px;
+  width:100%;
+
+  &__header {
+    position: relative;
+    width:100%;
+    height:200px;
+    background-image: url("header-bg.jpeg");
+    background-size: auto 700px;
+    background-repeat: no-repeat;
+    
+    a:hover{
+      opacity: 0.7;
+    }
+
+    &__profile {
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+      width:100%;
+      text-align: center;
+      
+      img {
+        border-radius: 50%;
+      }
+
+      &__transaction {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        p:nth-child(2){
+          margin-left:16px;
+        }
+      }
+    }
+  }
+}
+
+.mypage-information__container h3 {
+  margin-top:40px;
+  width:100%;
+  padding:0 16px;
+  box-sizing: border-box;
+  font-size: 16px;
+  height:72px;
+  background-color:#fff;
+  line-height:72px;
+}
+.mypage-information__container__heading {
+  max-width:700px;
+  width:100%;
+  height: 72px;
+  
+  ul {
+   display: flex;
+  
+    li input{
+      width:350px;
+      height:72px;
+      display: inline-block;
+      background-color:#fff;
+      border:none;
+      border-top:2px solid #ea352d;
+      font-size:16px;
+    }
+
+    li:last-child input{
+      background-color: #eee;
+      border:none;
+    }
+  }
+}
+
+.mypage-information__container__contents{
+  background-color:#fff;
+  height:100%;
+  
+  
+  &__content {
+    position: relative;
+    height:48px;
+    padding:16px;
+    border-bottom:1px solid #eee;
+
+     img{
+      float:left;
+      height:48px;
+      width:48px;
+      background-color:#eee;
+    }
+    
+    .fa-chevron-right { //このクラス名は矢印アイコンのクラス名です。
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+      right:16px;
+    }
+    
+    &__detail {
+     margin:0 40px 0 68px;
+    
+    .mypage-time {
+     display: flex;
+     float: left;;
+     width:100px;
+     height:17px;
+     line-height: 17px;
+   
+     i {
+       margin-right:8px;
+    }
+   }
+  }
+
+   &__go {
+    height:56px;
+    padding:16px;
+
+    input {
+      height:56px;
+      width:100%;
+      background-color: #eee;
+      border:none;
+      font-size:14px;
+    }
+   }
+ }
+}
+
+
+

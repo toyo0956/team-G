@@ -1,0 +1,96 @@
+.mypage-sidebar
+  　　　　　　　
+  .mypage-sidebar__container
+    = link_to  do
+      #sidebar-active.mypage-sidebar__container__title
+        %h2.weight マイページ
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 お知らせ
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 やること一覧
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 出品する
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 出品した商品・出品中
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 出品した商品・取引中
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 出品した商品・売却済み
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 購入した商品・取引中
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 出品した商品・過去の取引
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 ニュース一覧
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 評価一覧
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 ガイド
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 お問い合わせ
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    .sidebar-settlement
+      　
+      %p メルペイ
+      = link_to  do
+        .mypage-sidebar__container__title
+          %h2 残高
+          %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+      = link_to  do
+        .mypage-sidebar__container__title
+          %h2 ポイント
+          %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    .sidebar-config
+      %p 設定
+      = link_to  do
+        .mypage-sidebar__container__title
+          %h2 プロフィール
+          %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+      = link_to  do
+        .mypage-sidebar__container__title
+          %h2 発送元・お届け先住所変更
+          %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+      = link_to  do
+        .mypage-sidebar__container__title
+          %h2 支払い方法
+          %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+      = link_to  do
+        .mypage-sidebar__container__title
+          %h2 メール/パスワード
+          %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+      = link_to edit_user_path(@users) do
+        .mypage-sidebar__container__title
+          %h2 本人情報
+          %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+      = link_to  do
+        .mypage-sidebar__container__title
+          %h2 電話番号の確認
+          %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+      = link_to destroy_user_session_path, method: :destroy do
+        .mypage-sidebar__container__title
+          %h2 ログアウト
+          %i.fa.fa-chevron-right{"aria-hidden" => "true"}
