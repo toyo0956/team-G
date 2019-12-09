@@ -12,7 +12,9 @@
 |first_name|string|null: false|
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|birthday|string|null: false|
+|birthdate_year|string|null: false|
+|birthdate_month|string|null: false|
+|birthdate_day|string|null: false|
 |phone_number|string||
 
 ### Association
@@ -126,8 +128,10 @@
 |------|----|-------|
 |id|integer|null: false, unique: true|
 |user_id|integer|null: false, foreign_key: true|
-|customer_id|integer|null: false|
-|card_id|integer|null: false, foreign_key: true|
+|card_number|string|null: false|
+|expiration_month|string|null: false|
+|expiration_year|string|null: false|
+|security_cord|string|null: false|
 
 ### Association
 - belongs_to : user
