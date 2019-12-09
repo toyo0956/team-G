@@ -1,0 +1,86 @@
+.mypage-container {
+  background-color: #f5f5f5;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 40px 210px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mypage-side-list {
+  background-color: #fff;
+  position: absolute;
+  margin-right: 40px;
+  width: 280px;
+  height: 600px;
+
+}
+
+.mypage-cardlist-content {
+  background-color: #fff;
+  position: absolute;
+  width: 700px;
+  margin-left: 320px;
+  .content-chapter {
+    text-align: center;
+      &__head {
+        font-size: 24px;
+        padding: 8px 24px;
+        line-height: 1.4;
+        font-family: 'Josefin Sans', 'Noto Sans JP', serif;
+      }
+      &__single-inner {
+        padding: 64px;
+        border-top: 1px solid #f5f5f5;
+        text-align: left;
+        .single-conent {
+          width: 320px;
+          margin: 0 auto;
+          &__sub-head {
+            font-size: 16px;
+            }
+          }
+          .payment-list {
+            list-style: none;
+              li {
+                padding: 24px 0;
+                border-bottom: 1px solid #eee;
+                text-align: left;
+                  .single-inner__content {
+                    position: relative;
+                    max-width: 320px;
+                    margin: 0 auto;
+                      figure {
+                        height: 20px;
+                      }
+                      .settings-payment-num {
+                        margin: 8px 0 0;
+                        font-size: 16px;
+                      }
+                      .settings-payment-remove {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        padding: 4px 6px;
+                        background: #fff;
+                        border-radius: 3px;
+                        border: 1px solid #ea352d;
+                        color: #ea352d;
+                      }
+                  }
+              }
+          }
+          .settings-not-regist {
+            display: block;
+            margin: 40px 0 0;
+            text-align: right;
+            .payment-method {
+              color: #0099e8;
+              text-decoration: none;
+              touch-action: manipulation;
+            }
+          }
+      }
+  }
+}
