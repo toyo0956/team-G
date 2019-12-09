@@ -1,0 +1,20 @@
+.template__container
+  .template__container__heading
+    = link_to " " do
+      %ul
+        %li
+          %input{:id => "", :type => "button", :value => ""}/
+        %li
+          %input{:id => "", :type => "button", :value => ""}/
+  .template__container__contents{:id => ""}
+    .template__container__contents__content
+      = image_tag "", width:"48px", height:"48px"
+      .template__container__contents__content__detail
+        %p
+        %time.template-time
+          %i.fa.fa-clock{"aria-hidden" => "true"}
+          %p
+      %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    .template__container__contents__content__go
+      = link_to  do
+        %input{:id => "", :type => "button", :value => ""}/

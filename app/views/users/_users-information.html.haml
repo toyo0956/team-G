@@ -1,0 +1,54 @@
+.mypage-information
+  .mypage-information__header
+    = link_to "" do
+      .mypage-information__header__profile
+        = image_tag "sample1.jpg", width:"60px", height:"60px"
+        %p テストネーム
+        .mypage-information__header__profile__transaction
+          %p
+            評価 
+            %span 100
+          %p
+            出品数 
+            %span 100
+  .mypage-information__container
+    .mypage-information__container__heading
+      = link_to users_path(current_user) do
+        %ul
+          %li
+            %input#mypage-heading1{:type => "button", :value => "お知らせ"}/
+          %li
+            %input#mypage-heading2{:type => "button", :value => "やることリスト"}/
+    #mypage-content.mypage-information__container__contents
+      = link_to "" do
+        .mypage-information__container__contents__content
+          = image_tag "sample1.jpg", width:"48px", height:"48px"
+          .mypage-information__container__contents__content__detail
+            %p いいねしました。
+            %time.mypage-time
+              %i.fa.fa-clock{"aria-hidden" => "true"}
+              %p 22時間
+          %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+      .mypage-information__container__contents__content__go
+        = link_to  do
+          %input#mypage-details{:type => "button", :value => "一覧を見る"}/
+  .mypage-information__container
+    %h3 購入した商品
+    .mypage-information__container__heading
+      = link_to users_path(current_user) do
+        %ul
+          %li
+            %input#mypage-heading1{:type => "button", :value => "取引中"}/
+          %li
+            %input#mypage-heading2{:type => "button", :value => "過去の取引"}/
+    #mypage-content.mypage-information__container__contents
+      = link_to "" do
+        .mypage-information__container__contents__content
+          = image_tag "sample1.jpg", width:"48px", height:"48px"
+          .mypage-information__container__contents__content__detail
+            %p 取引が完了しました
+            %p 取引完了
+          %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+        .mypage-information__container__contents__content__go
+          = link_to  do
+            %input#mypage-details{:type => "button", :value => "一覧を見る"}/
