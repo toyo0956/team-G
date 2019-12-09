@@ -5,4 +5,11 @@ class UsersController < ApplicationController
 
   def show
   end
+
+  def edit
+    @users = User.all
+  end
+
+  def destroy
+  end
 end
