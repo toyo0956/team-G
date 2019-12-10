@@ -42,11 +42,11 @@
         = f.label :birthday, '生年月日', class: 'form-label'
         %span.form-require
         .birthday-select
-          = select_tag('year',options_for_select(1900..2019),include_blank: '--',class: "birthday")
+          = f.select :birthdate_year, options_for_select(1900..2019), include_blank: '--', class: "birthday"
           %span 年
-          = select_tag('month',options_for_select(1..12),include_blank: '--',class: "birthday")
+          = f.select :birthdate_month, options_for_select(1..12), include_blank: '--', class: "birthday"
           %span 月
-          = select_tag('day',options_for_select(1..31),include_blank: '--',class: "birthday")
+          = f.select :birthdate_day, options_for_select(1..31), include_blank: '--', class: "birthday"
           %span 日
 
       .form.info
