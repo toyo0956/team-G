@@ -1,0 +1,10 @@
+.sold__content
+  .header
+    = render 'items/header.new'
+  .contents
+    .content__head
+      %p 商品は既に売り切れています
+    .content__box
+      = link_to '#', class: "link__return" do
+        商品画面へ戻る
+.footer

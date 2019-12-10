@@ -6,7 +6,14 @@
 @import 'items/new/new.scss';
 @import 'items/new/header.scss';
 @import 'items/items';
+
 @import 'users/users';
 @import 'users/show';
 @import 'users/user2';
 @import 'users/signup';
+
+@import "users/users";
+@import "users/edit";
+@import "users/show";
+
+@import "users/user2";
