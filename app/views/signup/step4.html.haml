@@ -1,7 +1,61 @@
-%h1 step4
-= form_for @card, url: signup_index_path, method: :post, html: {class: 'fortn-main__box'} do |f|
-  = f.text_field :card_number, placeholder: '例) '
-  = f.text_field :expiration_month, placeholder: '例) '
-  = f.text_field :expiration_year, placeholder: '例) '
-  = f.text_field :security_cord, placeholder: '例) '
-  = f.submit 'Send', class: 'form__submit'
+= render "user_header"
+
+.call__content
+  .contents
+    .content
+      .content__head
+        %p 支払い方法
+      .content__boxtt
+        .content__boxestt
+          .content__formtt
+            = form_for @card, url: signup_index_path, method: :post do |f|
+              = f.label :card_number, 'カード番号', class: 'label__title'
+              %span{class: "form__text"} 必須
+              = f.text_field :card_number, class: 'input__form', placeholder: '半角数字のみ'
+
+              %ul.card__icon
+                %li
+                  = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2356214421", width: "49", height: "20" 
+                %li
+                  = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2356214421", width:"34", height:"20"
+                %li  
+                  = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?2356214421", width:"30", height:"20"
+                %li  
+                  = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?2356214421", width:"32", height:"20"
+                %li
+                  = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?2356214421", width:"21", height:"20"
+                %li
+                  = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?2356214421", width:"32", height:"20"
+                %li  
+                  = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?2356214421", width:"32", height:"20"
+
+                .content__limit
+                  %label{class: "label__title"} 有効期限
+                  %span{class: "form__text"} 必須
+                  %br
+
+                  .content__select
+                    = f.select :expiration_month, ["01","02","03","04","05","06","07","08","09","10","11","12"], {}, class: 'select__box'
+                    =fa_icon 'angle-down', class: "select__icon"
+                    %span{class: "select__span"} 月
+
+                  .content__select
+                    = f.select :expiration_year, ["19","20","21","22","23","24","25","26","27","28","29"], {}, class: 'select__box'
+                    =fa_icon 'angle-down', class: "select__icon"
+                    %span{class: "select__span"} 年
+
+                .content__code
+                  = f.label :nickname, 'セキュリティコード', class: 'label__title'
+                  %span{class: "form__text"} 必須
+                  = f.text_field :security_cord, class: 'input__form', placeholder: 'カード背面4桁もしくは3桁の番号'
+
+                  .bottom__info
+                    .bottom__box
+                      %span{class: "bottom__span"} ?
+                      カード裏面の番号とは？
+
+                %button{type:"submit", class:"content__btn"}
+                  次へ進む
+
+  .footer 
+  = render "user_footer"
