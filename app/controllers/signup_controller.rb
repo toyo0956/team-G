@@ -37,7 +37,8 @@ class SignupController < ApplicationController
     first_name_kana: session[:first_name_kana],
     birthdate_year: session[:birthdate_year],
     birthdate_month: session[:birthdate_month],
-    birthdate_day: session[:birthdate_day]
+    birthdate_day: session[:birthdate_day],
+    phone_number: session[:phone_number]
     )
 
     unless @user.save
@@ -48,11 +49,10 @@ class SignupController < ApplicationController
     @address = Address.new(
       user: @user,
       postal_code: session[:postal_code],
-      prefecture_id: session[:prefecture_id],
+      prefacture: session[:prefacture],
       city: session[:city],
       house_number: session[:house_number],
-      building_name: session[:building_name],
-      phone_number: session[:phone_number]
+      building_name: session[:building_name]
     )
 
     @card = Card.new(
@@ -89,17 +89,16 @@ class SignupController < ApplicationController
   end
 
   def save_to_session_step2
-    #session[:phone_number] = user_params[:phone_number]
+    session[:phone_number] = user_params[:phone_number]
     redirect_to step3_signup_index_path
   end
 
   def save_to_session_step3
     session[:postal_code] = address_params[:postal_code]
-    session[:prefecture_id] = address_params[:prefecture_id]
+    session[:prefacture] = address_params[:prefacture]
     session[:city] = address_params[:city]
     session[:house_number] = address_params[:house_number]
     session[:building_name] = address_params[:building_name]
-    session[:phone_number] = address_params[:phone_number]
     redirect_to step4_signup_index_path
   end
 
@@ -117,18 +116,18 @@ class SignupController < ApplicationController
         :first_name_kana,
         :birthdate_year,
         :birthdate_month,
-        :birthdate_day
+        :birthdate_day,
+        :phone_number
       )
     end
 
     def address_params
       params.require(:address).permit(
         :postal_code,
-        :prefecture_id,
+        :prefacture,
         :city,
         :house_number,
-        :building_name,
-        :phone_number
+        :building_name
       )
     end
 

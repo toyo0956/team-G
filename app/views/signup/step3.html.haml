@@ -1,5 +1,3 @@
-= render "user_header"
-
 %main.single-main
   .register-head お届け先住所入力
   .register-form
@@ -9,9 +7,9 @@
         %span.form-require 
         = f.text_field :postal_code, placeholder: "例）123-4567", class: 'form-input'
       .form
-        = f.label :prefecture_id, '都道府県', class: 'form-label'
+        = f.label :prefecture, '都道府県', class: 'form-label'
         %span.form-require 
-        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: 'form-input'
+        = f.text_field :prefecture, placeholder: "北海道", class: 'form-input'
         -# active_hash 未実装
       .form  
         = f.label :city, '市区町村', class: 'form-label'
@@ -28,7 +26,7 @@
       .form
         = f.label :phone_number, '携帯電話の番号', class: 'form-label'
         %span.form-require--gray 
-        = f.text_field :phone_number, placeholder: "例）09012345678", class: 'form-input'
+        = f.text_field :building_name, placeholder: "仮置き", class: 'form-input'
         -# = f.text_field :phone_number, placeholder: "例）09012345678", class: 'form-input'
       .form
         .next-btn
