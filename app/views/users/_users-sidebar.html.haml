@@ -1,5 +1,4 @@
 .mypage-sidebar
-  　　　　　　　
   .mypage-sidebar__container
     = link_to  do
       #sidebar-active.mypage-sidebar__container__title
@@ -11,7 +10,11 @@
         %i.fa.fa-chevron-right{"aria-hidden" => "true"}
     = link_to  do
       .mypage-sidebar__container__title
-        %h2 やること一覧
+        %h2 やることリスト
+        %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+    = link_to  do
+      .mypage-sidebar__container__title
+        %h2 いいね！一覧
         %i.fa.fa-chevron-right{"aria-hidden" => "true"}
     = link_to  do
       .mypage-sidebar__container__title
@@ -58,7 +61,7 @@
       %p メルペイ
       = link_to  do
         .mypage-sidebar__container__title
-          %h2 残高
+          %h2 残高・振込申請
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
       = link_to  do
         .mypage-sidebar__container__title
@@ -66,7 +69,7 @@
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
     .sidebar-config
       %p 設定
-      = link_to  do
+      = link_to edit_user_path do
         .mypage-sidebar__container__title
           %h2 プロフィール
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
@@ -82,7 +85,7 @@
         .mypage-sidebar__container__title
           %h2 メール/パスワード
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
-      = link_to edit_user_path(@users) do
+      = link_to  do
         .mypage-sidebar__container__title
           %h2 本人情報
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}

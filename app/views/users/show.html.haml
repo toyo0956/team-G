@@ -1,9 +1,46 @@
-#mypage-content.mypage-information__container__contents
-  .mypage-information__container__contents__content
-    = image_tag "sample1.jpg", width:"48px", height:"48px"
-    .mypage-information__container__contents__content__detail
-      %p いいねしました。
-      %time.mypage-time
-        %i.fa.fa-clock{"aria-hidden" => "true"}
-        %p 22時間
-    %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+= render "users-navigation"
+
+.mypage
+  .mypage__main
+    = render "users/users-sidebar"
+    
+    .mypage-registration
+      .mypage-registration__heading
+        %h1 本人情報の登録
+      .mypage-registration__container
+        .mypage-registration__container__document
+          %h2 お客さまの本人情報をご登録ください。<br>登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+          = link_to "本人確認書類のアップロードについて","", class: "mypage-registration-document"
+        .mypage-registration__container__content
+          .mypage-registration__container__content__person
+            %h2 お名前
+            %p 西口 裕貴
+          .mypage-registration__container__content__person
+            %h2 お名前カナ
+            %p ニシグチ ヒロキ
+          .mypage-registration__container__content__person
+            %h2 生年月日
+            %p 1900/12/12
+          .mypage-registration__container__content__form
+            = form_for(current_user) do |f|
+              .mypage-registration__container__content__person
+                %h2 郵便番号
+                = text_field :postal_code, class: "mypage_postal_code", placeholder: '(例)1234567'
+              .mypage-registration__container__content__person
+                %h2 都道府県
+                = text_field :prefectures, class: "mypage_prefectures", placeholder: '(例)1234567'
+              .mypage-registration__container__content__person
+                %h2 市区町村
+                = text_field :city, class: "mypage_city", placeholder: '(例)横浜市緑区'
+              .mypage-registration__container__content__person
+                %h2 番地
+                = text_field :house＿number, class: "mypage_house_number",placeholder: '(例)青山1-1-1'
+              .mypage-registration__container__content__person
+                %h2 建物名
+                = text_field :building_name, class: "mypage_building_name",placeholder: '(例)柳ビル103'
+              .mypage-registration__container__content__submit
+                = f.submit "登録する", class: "mypage_submit"
+          .mypage-registration__container__footer
+            %i.fa.fa-chevron-right{"aria-hidden" => "true"}
+            = link_to "本人情報の登録について","", class: "mypage-registration-document"
