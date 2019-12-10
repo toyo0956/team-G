@@ -1,0 +1,22 @@
+.header
+  %h1
+    %a{href: '#'}
+      %img{src: 'fmarket_logo_red.svg', alt: "Fmarket"}
+
+  %nav.header__progress-bar
+    %ol.header__progress-bar__list
+      %li.header__progress-bar__list__item
+        %span 会員情報
+        .header__progress-bar__list__item__status{id: "progress-bar_active"}
+      %li.header__progress-bar__list__item
+        電話番号認証
+        .header__progress-bar__list__item__status
+      %li.header__progress-bar__list__item
+        お届け先住所入力
+        .header__progress-bar__list__item__status
+      %li.header__progress-bar__list__item
+        支払い方法
+        .header__progress-bar__list__item__status
+      %li
+        完了
+        .header__progress-bar__last
