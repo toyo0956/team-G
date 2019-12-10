@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_12_08_055953) do
     t.string "city", null: false
     t.string "house_number", null: false
     t.string "building_name", null: false
+    t.string "phone_number", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,7 +47,6 @@ ActiveRecord::Schema.define(version: 2019_12_08_055953) do
     t.string "birthdate_year", null: false
     t.string "birthdate_month", null: false
     t.string "birthdate_day", null: false
-    t.string "phone_number", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
