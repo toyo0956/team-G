@@ -1,0 +1,141 @@
+
+
+.mypage-sidebar {
+  margin-top: 0px;
+}
+
+.mypage-registration {
+  max-width:700px;
+  width:100%;
+  height:100%;
+  float: left;
+  background-color:#fff;
+
+  &__heading {
+    border-bottom:2px solid #eee;
+    text-align:center;
+    padding:8px 24px;
+
+    h1 {
+      font-size:24px;
+      font-weight: 600;
+    }
+  }
+
+
+
+  .mypage-registration__container {
+    padding:64px;
+    &__document {
+    position: relative;
+    width:100%;
+    height:100px;
+   h2{
+      margin-top:8px;
+    }
+
+    a {
+      position: absolute;
+      right:10px;
+      margin-top:8px;
+      color: #0099e8;;
+
+      &:hover {
+        text-decoration: underline;
+        opacity:0.8;
+      }
+    }
+
+     i {
+      position: absolute;
+      margin-top:11px;
+      right:0;
+      color: #0099e8;
+    }
+   }
+
+   &__footer {
+    position: relative;
+    width:100%;
+    margin-top:40px;
+    a {
+      position: absolute;
+      right:10px;
+      margin-top:8px;
+      color: #0099e8;
+
+      &:hover {
+        text-decoration: underline;
+        opacity:0.8;
+      }
+    }
+
+     i {
+      position: absolute;
+      margin-top:11px;
+      right:0;
+      color: #0099e8;
+    }
+   }
+  }
+
+  .mypage-registration__container__content__person{
+    margin-top:40px;
+    
+    &:first-child {
+      margin-top:0;
+    }
+    h2 {
+      font-weight:600;
+
+      &:after {
+        content:"任意";
+        display:inline-block;
+        background-color:#ccc;
+        color:#fff;
+        border-radius: 2px;
+        padding:2px 4px;
+        margin-left:8px;
+        width:auto;
+        font-size:12px;
+        font-weight:400;
+      }
+    }
+
+    p {
+      margin-top: 8px;
+    }
+
+    input {
+      margin-top:8px;
+      padding:10px 16px 8px 16px;
+      width:100%;
+      max-width:538px;
+      height:28px;
+      font-size:16px;
+      background-color:#fff;
+      border:1px solid #ccc;
+      border-radius: 4px;
+      line-height: 1.5;
+
+      &:focus {
+        outline: none;
+        border-color: #0099e8;
+      }
+    }
+  }
+
+  .mypage_submit {
+    max-width:570px;
+    width:100%;
+    height:48px;
+    border: none;
+    background-color:rgb(234, 53, 45);
+    color:#fff;
+    font-size:14px;
+    margin-top:40px;
+  }
+
+  
+}
+
