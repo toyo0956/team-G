@@ -1,0 +1,22 @@
+= render 'header'
+.mypage-container
+  .mypage-side-list
+  .mypage-cardlist-content
+    %section.content-chapter
+      %h2.content-chapter__head 支払い方法
+      .content-chapter__single-inner
+        .single-conent
+          %h3.single-content__sub-head クレジットカード一覧
+        %ul.payment-list
+          %li
+            %form.single-inner__content
+              %figure
+                %img
+              .settings-payment-num ************
+              .settings-payment-num 01/20
+              %button.settings-payment-remove 削除する
+        .settings-not-regist
+          = link_to '#', class: 'payment-method' do
+            %span 支払い方法について
+            %i.fas.fa-angle-right
+= render 'footer'

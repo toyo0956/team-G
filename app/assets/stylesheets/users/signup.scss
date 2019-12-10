@@ -1,0 +1,160 @@
+.single-main {
+  text-align: center;
+  background-color: #f5f5f5;
+  .register-head{
+    background-color: #FFFFFF;
+    max-width: 700px;
+    margin: 0 auto;   
+    height: 97px;
+    padding: 32px;
+    font-size: 25px;
+    border-bottom: solid 1px #f5f5f5;
+  }
+  .register-form {
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 700px;
+    margin: 0px auto;
+    display: inline-block;
+    text-align: left;
+    font-size: 14px;
+    .form {
+      height: 99px;
+      width: 343px;
+      margin: 0px auto;
+      .form-label{ 
+        font-weight: 600;
+      }
+      .form-label-half{
+        font-weight: 600;
+        padding-right: 50px;
+      }
+      .form-require:after {
+        content: "必須";
+        height: 19px;
+        width: 32px;
+        color: #FFFFFF;
+        background: #EA352D;
+        margin: 0px 0px 0px 8px;
+        padding: 2px 4px;
+      }
+      .form-require--gray:after {
+        content: "任意";
+        height: 19px;
+        width: 32px;
+        color: #FFFFFF;
+        background: #808080;
+        margin: 0px 0px 0px 8px;
+        padding: 2px 4px;            
+      }
+      .form-input{
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        height: 48px;
+        width: 343px;
+        font-size: 18px;
+        background-color: #FFFFFF;
+        margin: 8px 0px 0px;
+        padding: 10px 16px 8px;
+      }    
+      .form-input:focus{
+        border: 1px solid #0099EB;
+        outline: none;
+      }
+      .check{
+        margin-top: 20px;
+        font-size: 18px;
+      }
+      .birthday-select{
+        select {
+          font-size: 13px;
+          height: 50px;
+          width: 80px;
+          border: 1px solid #ccc;
+          background: transparent;
+        }
+        select:focus{
+          border: 1px solid #0099EB;
+          outline: none;
+        }
+      }
+      .form-input-half{
+        display: inline-flex;
+        box-sizing: border-box;
+        font-size: 18px;
+        height: 48px;
+        width: 165.5px;
+        padding: 10px 16px 8px;
+      }
+      .form-input-half:focus{
+        border: 1px solid #0099EB;
+        outline: none;
+      }
+      .form-info{
+        color: #888888;
+      }
+    }
+    .btn-red {
+      height: 50px;
+      width: 343px;
+      color: #FFFFFF;
+      font-size: 15px;
+      background-color: #EA352D;
+      margin: 24px 0px 0px;
+    }
+    .btn-red:focus{
+      outline: none;
+      background-color: #808080;
+    }
+    // 仮置き（= recaptcha_tags)
+    .recaptcha-check{
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      line-height: 65px;
+      height: 74px;
+      width: 300px;
+      margin: 0 auto;
+      font-size: 15px;
+    }
+    .form.password{
+      height: 158px;
+      width: 343px;
+    }
+    .form.info{
+      height: 60px;
+      width: 343px;
+    }
+    .form.add {
+      height: 200px;
+      width: 343px;
+    }
+    .form {
+      a {
+        color: #0099EB;
+        text-decoration: none;
+      }
+      a:hover{
+        opacity: 0.7;
+        text-decoration: underline;
+      }
+    }
+    .single-text {
+      padding-top: 40px;
+      text-align: right;
+      a {
+        color: #0099EB;
+        text-decoration: none;
+      }
+      a:hover{
+        opacity: 0.7;
+        text-decoration: underline;
+      }
+    }
+    .end{
+      text-align: center;
+      font-size: 15px;
+      padding: 30px 0 15px;
+    }
+  }  
+}
+

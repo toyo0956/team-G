@@ -1,0 +1,27 @@
+.single-main{
+  background-color: #f5f5f5;
+  text-align: center;
+  height: 100vh;
+  padding-top: 40px;
+  .single-inner{
+    padding-top: 64px;
+    max-width: 700px;
+    height: 179px;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    .btn-red {
+      height: 50px;
+      width: 343px;
+      color: #FFFFFF;
+      font-size: 15px;
+      background-color: #EA352D;
+      margin: 24px 0px 0px;
+    }
+    .btn-red:focus{
+      outline: none;
+      background-color: #808080;
+    }
+  }
+} 
+
+  

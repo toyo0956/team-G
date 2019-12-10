@@ -4,12 +4,17 @@ class UsersController < ApplicationController
   end
 
   def show
+    @users = User.all
   end
 
   def edit
-    @users = User.all
+    @users = User
+  end
+
+  def new
   end
 
   def destroy
   end
+  
 end
