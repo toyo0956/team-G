@@ -35,8 +35,11 @@ footer {
           display: flex;
           li {
             a {
-              font-size: 32px;
               color: $white;
+              i {
+                font-size: 30px;
+                margin-top: 10px;
+              }
             }
             .twitter-icon {
               margin-right: 20px;
