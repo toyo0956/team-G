@@ -2,6 +2,7 @@ header {
   width: 100vw;
   height: 100px;
   box-shadow: 0 0 5px;
+  box-sizing: border-box;
   .top-page__header {
     margin: 0 auto;
     max-width:1020px;
@@ -81,7 +82,7 @@ header {
       &-right {
         display: flex;
         a {
-          height: 50%;
+          height: 60%;
           text-decoration: none;
           font-size: 14px;
           color: $white;
@@ -97,7 +98,7 @@ header {
           background-color: $white;
           border: 1px solid $light_blue;
           color: $light_blue;
-          height: 43%;
+          height: 63%;
           margin-left: 8px;
         }
       }
