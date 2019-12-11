@@ -1,3 +1,18 @@
 = link_to 'メールで新規登録', step1_signup_index_path, method: :get,  class: 'signup__btn'
 
-
+.signup-index-page
+  = render 'items/header.new'
+  .signup-index-page-main
+    .main__header
+      %h1 新規会員登録
+    .main
+      = link_to step1_signup_index_path, class: 'mail-registration-btn' do
+        %i.far.fa-envelope
+        メールアドレスで登録する
+      = link_to '#', class: 'facebook-registration-btn' do
+        %i.fab.fa-facebook-square
+        Facebookで登録する
+      = link_to '#', class: 'google-registration-btn' do
+        %i.fab.fa-google
+        Googleで登録する
+  = render 'signup/user_footer'

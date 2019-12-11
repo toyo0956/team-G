@@ -1,6 +1,6 @@
 footer {
   width: 100vw;
-  height: 400px;
+  height: 100%;
   background-color: #222;
   margin: 0 auto;
   padding: 20px 0;
@@ -17,11 +17,12 @@ footer {
       }
       li {
         margin-bottom: 15px;
+        display: block;
       }
       li > a {
         text-decoration: none;
         color: lightgray;
-        font-size: 13px;
+        font-size: 12px;
       }
       li > a:hover {
         text-decoration: underline;
