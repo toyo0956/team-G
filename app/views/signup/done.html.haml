@@ -8,6 +8,6 @@
         %p 会員登録が完了しました。
     .form
       .next-btn
-        %button{type:"submit",class:"btn-red"}
-          メルカリをはじめる 
+        = link_to  root_path ,class: "btn-red" do
+          %input{type:"submit",class:"btn-red-submit", value: "メルカリを始める"}
 .footer
