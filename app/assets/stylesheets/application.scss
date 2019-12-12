@@ -1,20 +1,46 @@
-@import 'reset';
+
+// --------colorsフォルダ----------
 @import 'colors/color.scss';
-@import 'items/header.scss';
-@import 'items/main.scss';
+
+// // --------itemsフォルダ----------
 @import 'items/footer.scss';
+@import 'items/header.scss';
+@import 'items/items';
+@import 'items/main.scss';
+
 @import 'items/new/new.scss';
 @import 'items/new/header.scss';
-@import 'items/items';
-@import 'users/signup';
-@import "users/users";
-@import "users/edit";
-@import "users/show";
+
+// // --------mypageフォルダ----------
+
+// // --------usersフォルダ----------
 @import "users/mixin";
-@import 'users/signup.index';
+@import "users/edit";
 @import "users/login";
+@import "users/show";
+@import 'users/signup.index';
+@import 'users/signup';
 @import "users/user2";
-@import "users/users2";
+@import "users/users";
+
+// --------stylesheetsフォルダ----------
+@import 'reset';
 @import "user";
 @import "users_header";
 @import "users_footer";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
