@@ -1,4 +1,10 @@
 
+// --------stylesheetsフォルダ----------
+@import 'reset';
+@import "user";
+@import "users_header";
+@import "users_footer";
+
 // --------colorsフォルダ----------
 @import 'colors/color.scss';
 
@@ -23,11 +29,7 @@
 @import "users/user2";
 @import "users/users";
 
-// --------stylesheetsフォルダ----------
-@import 'reset';
-@import "user";
-@import "users_header";
-@import "users_footer";
+
 
 
 
