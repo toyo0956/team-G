@@ -69,5 +69,5 @@
     .footer-copyright-below
       .footer-main
         = link_to root_path do
-          %img.footer-logo{src: 'fmarket_logo_white.svg'}
+          = image_tag asset_path("fmarket_logo_white.svg"), class: 'footer-logo'
         %p.copyright © Mercari, Inc.
