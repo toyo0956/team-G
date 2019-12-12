@@ -6,7 +6,7 @@ footer {
   padding: 20px 0 ;
   box-sizing: border-box;
   clear: both;
-  
+
   .footer__main {
     margin: 0 15%;
     .footer__lists-above {
@@ -19,11 +19,12 @@ footer {
       }
       li {
         margin-bottom: 15px;
+        display: block;
       }
       li > a {
         text-decoration: none;
         color: lightgray;
-        font-size: 13px;
+        font-size: 12px;
       }
       li > a:hover {
         text-decoration: underline;
@@ -36,8 +37,11 @@ footer {
           display: flex;
           li {
             a {
-              font-size: 32px;
               color: $white;
+              i {
+                font-size: 30px;
+                margin-top: 10px;
+              }
             }
             .twitter-icon {
               margin-right: 20px;

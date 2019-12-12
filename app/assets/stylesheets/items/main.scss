@@ -6,7 +6,7 @@
     background-color: $white;
     .main__header {
       height: 150px;
-      margin: 10px 15%;
+      margin: 10px 10%;
       &-text {
         height: 60%;
         text-align: center;
@@ -46,8 +46,15 @@
       margin: 10px 10%;
       &-text {
         font-size: 26px;
-        padding: 50px 0 15px;
+        padding: 50px 0 5px;
         display: flex;
+        h1 {
+          font-size: 26px;
+          position: relative;
+          left: 10px;
+          font-weight: bold;
+          color: #333;
+        }
         .view__content {
           display: flex;
           text-decoration: none;
