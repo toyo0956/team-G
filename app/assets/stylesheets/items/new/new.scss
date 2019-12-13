@@ -91,10 +91,20 @@
           }
             
           }
-          .image__form {
+          .form__mask__image{
+           width:100%;
+           height:148px;
+           display: inline-block;
+          input{
+            width:100%;
             height: 100%;
-            display: none;
+            visibility: hidden;
+            &:focus {
+              outline: none;
+              border:1px solid $light_blue;
+            }
           }
+         }
         } 
         .image_box:hover {
           cursor: pointer;

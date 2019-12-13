@@ -10,7 +10,8 @@
           %span 必須
           %p 最大10枚までアップロードできます
           .image_box
-            = f.file_field :image, class: 'image__form'
+            = f.label :image, class: 'form__mask__image' do
+              = f.file_field :image, class: 'image__form'
             .image-placeholder
               %h3 ドラッグアンドドロップ
               %h3 またはクリックしてファイルをアップロード
