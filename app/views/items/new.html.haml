@@ -14,17 +14,17 @@
       .new-page__main__form.item__form
         %h1 商品名
         %span 必須
-        %input{type: 'text', placeholder: '商品名 (必須40文字まで)'}
+        %input{type: 'text', placeholder: '商品名 (必須40文字まで)', class: 'item-name__form'}
         %h1 商品の説明
         %span 必須
-        %textarea{placeholder: '商品の説明 (必須1,000文字以内) (色、素材、重さ、定価、注意点など)  例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'}
+        %textarea{placeholder: '商品の説明 (必須1,000文字以内) (色、素材、重さ、定価、注意点など)  例) 2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', class: 'item-description__form'}
       .new-page__main__form.item-details
         .form-left
           %p 商品の詳細
         .form-right
           %h1 カテゴリー
           %span 必須
-          %select
+          %select.select
             %option ---
             %option{value: '1'} レディース
             %option{value: '2'} メンズ
@@ -41,7 +41,7 @@
             %option{value: '13'} その他
           %h1 商品の状態
           %span 必須
-          %select
+          %select.select
             %option ---
             %option{value: '1'} 新品、未使用
             %option{value: '2'} 未使用に近い
@@ -57,13 +57,13 @@
         .form-right
           %h1 配送料の負担
           %span 必須
-          %select
+          %select.select
             %option ---
             %option{value: '1'} 送料込み(出品者負担)
             %option{value: '2'} 着払い(購入者負担)
           %h1 配送の方法
           %span 必須
-          %select
+          %select.select
             %option ---
             %option{value: '1'} 未定
             %option{value: '2'} らくらくメルカリ便
@@ -80,7 +80,7 @@
             = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---", class: 'input'
           %h1 発送までの日数
           %span 必須
-          %select
+          %select.select
             %option ---
             %option{value: '1'} 1〜2日で発送
             %option{value: '2'} 2〜3日で発送
@@ -95,7 +95,7 @@
             %h1 価格
             %span 必須
             %p ¥
-            %input{type: 'text', placeholder: '例) 300'}
+            %input{type: 'text', placeholder: '例) 300', class: 'input-price'}
           .form-right-middle
             %p 販売手数料(10%)
             %h2 -
