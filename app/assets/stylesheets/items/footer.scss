@@ -1,12 +1,13 @@
 footer {
-  width: 100vw;
-  height: 400px;
+  padding: 20px 0 ;
+  width: 100%;
+  height: 420px;
   background-color: #222;
-  margin: 0 auto;
-  padding: 20px 0;
+  box-sizing: border-box;
   clear: both;
+
   .footer__main {
-    margin: 0 15%;
+    margin: 0 10%;
     .footer__lists-above {
       width: 100%;
       height: 80%;
@@ -17,11 +18,12 @@ footer {
       }
       li {
         margin-bottom: 15px;
+        display: block;
       }
       li > a {
         text-decoration: none;
         color: lightgray;
-        font-size: 13px;
+        font-size: 12px;
       }
       li > a:hover {
         text-decoration: underline;
@@ -34,8 +36,11 @@ footer {
           display: flex;
           li {
             a {
-              font-size: 32px;
               color: $white;
+              i {
+                font-size: 30px;
+                margin-top: 10px;
+              }
             }
             .twitter-icon {
               margin-right: 20px;

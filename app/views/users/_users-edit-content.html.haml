@@ -1,0 +1,13 @@
+.edit-wrapper
+  .edit-container
+    .edit-heading
+      %h2 プロフィール
+    = form_for(current_user) do |f|
+      .edit-container__profile-header
+        .edit-container__profile-header__icon
+          = image_tag asset_path("sample1.jpg"), width:"60px", height:"60px";
+          = f.text_field :nickname, class: "edit-profile"
+      .edit-container__content
+        %textarea.edit-text
+        .edit-container__content__submit
+          = f.submit "変更する", class: "mypage_submit"
