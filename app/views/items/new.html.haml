@@ -8,10 +8,8 @@
         = form_for(@item, url: items_path) do |f|
           %h1 出品画像 
           %span 必須
-          %select
           %p 最大10枚までアップロードできます
           .image_box
-            -# image 未実装
             = f.file_field :image, class: 'image__form'
             %h3 ドラッグアンドドロップ
             %h3 またはクリックしてファイルをアップロード
