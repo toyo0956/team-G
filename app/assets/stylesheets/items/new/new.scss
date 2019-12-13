@@ -23,7 +23,7 @@
       }
       .new-page__main__form {
         width: 100%;
-        height: 250px;
+        height: 300px;
         border-bottom: 1px solid $light_gray;
         color: #333;
         padding: 40px 35px 20px;
@@ -49,7 +49,7 @@
         }
         .item-name__form {
           display: block;
-          width: 85%;
+          width: 100%;
           height: 45px;
           font-size: 16px;
           padding: 0 15px;
@@ -63,7 +63,7 @@
         }
         .item-description__form {
           display: block;
-          width: 85%;
+          width: 100%;
           height: 45%;
           font-size: 16px;
           padding: 10px 15px;
@@ -75,7 +75,7 @@
           border-color: $light_blue;
         }
         .image_box {
-          width: 90%;
+          width: 100%;
           height: 150px;
           background-color: $light_gray;
           border: 1px dashed $gray;
@@ -116,11 +116,11 @@
           width: 68%;
           height: 100%;
           float: right;
-          select {
+          .select {
             display: block;
             z-index: 2;
             height: 45px;
-            width: 83%;
+            width: 100%;
             border-radius: 4px;
             background: 0;
             border: 1px solid $gray;
@@ -129,7 +129,7 @@
             margin-bottom: 30px;
             padding: 0 20px;
           }
-          select:focus {
+          .select:focus {
             outline: none;
             border-color: $light_blue;
           }
@@ -139,26 +139,27 @@
         height: 320px;
       }
       .item-details {
-        height: 200px;
+        height: 260px;
       }
       .about-postage {
-        height: 400px;
+        height: 460px;
       }
       .about-price {
-        height: 280px;
+        height: 300px;
         .form-right {
           &-top {
             margin: 20px 0 0;
-            width: 82%;
+            width: 100%;
             border-bottom: 1px solid $gray;
-            padding-bottom: 30px;
+            padding-bottom: 20px;
             p {
               display: inline-block;
               position: relative;
-              left: 120px;
+              left: 180px;
             }
             .input-price {
               width: 30%;
+              padding: 20px 0;
               float: right;
               text-align: right;
               position: relative;
@@ -170,7 +171,7 @@
           &-middle {
             padding: 30px 0;
             border-bottom: 1px solid $gray;
-            width: 82%;
+            width: 100%;
             p {
               display: inline-block;
             }
@@ -179,8 +180,8 @@
             }
           }
           &-bottom {
-            padding: 30px 0;
-            width: 82%;
+            padding: 20px 0;
+            width: 100%;
             h1 {
               display: inline-block;
             }
@@ -194,7 +195,7 @@
       .sell-item {
         font-size: 14px;
         width: 100%;
-        height: 280px;
+        height: 320px;
         a {
           text-decoration: none;
           color: $light_blue;
@@ -219,7 +220,7 @@
           color: $white;
           background-color: $red;
           padding: 15px 0;
-          width: 90%;
+          width: 100%;
           text-align: center;
         }
         .back-btn {
@@ -229,7 +230,7 @@
           color: $white;
           display: block;
           text-align: center;
-          margin: 30px 25%;
+          margin: 30px 30%;
         }
         .back-btn:hover {
           opacity: 0.8;
