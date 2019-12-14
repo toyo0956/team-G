@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   def index
+    @items = Item.all
   end
   
   def new
@@ -11,13 +12,13 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      reirect_to new_items_path 
+      render new_item_path
     end
   end 
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region, :category, :days, :price, :image)
+    params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region, :category, :days, :price, images: [])
   end
 
   def show
