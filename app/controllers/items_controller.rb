@@ -15,12 +15,14 @@ class ItemsController < ApplicationController
       render new_item_path
     end
   end 
+  
+    def show
+    end
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region, :category, :days, :price, images: [])
+    params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region, :category, :days, :price, images: []).merge(user_id: current_user.id)
   end
 
-  def show
-  end
+  
 end

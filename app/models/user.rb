@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :address
   has_one :card
+  has_many :items
   accepts_nested_attributes_for :address
   accepts_nested_attributes_for :card
 end

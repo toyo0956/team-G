@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_12_13_085850) do
     t.string "city", null: false
     t.string "house_number", null: false
     t.string "building_name", null: false
+    t.string "phone_number"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -66,8 +67,10 @@ ActiveRecord::Schema.define(version: 2019_12_13_085850) do
     t.string "days", null: false
     t.string "price", null: false
     t.string "category", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -81,7 +84,6 @@ ActiveRecord::Schema.define(version: 2019_12_13_085850) do
     t.string "birthdate_year", null: false
     t.string "birthdate_month", null: false
     t.string "birthdate_day", null: false
-    t.string "phone_number", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -94,4 +96,5 @@ ActiveRecord::Schema.define(version: 2019_12_13_085850) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
+  add_foreign_key "items", "users"
 end
