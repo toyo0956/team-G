@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
   resources :signup do
     collection do
       get 'step1'
@@ -13,10 +14,7 @@ Rails.application.routes.draw do
     end
   end
   root to: 'items#index'
-<<<<<<< Updated upstream
-  resources :users 
   resources :items, only: [:new]
-=======
 
   resources :users do
    member do
@@ -26,5 +24,4 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index, :new, :create, :show]
 
->>>>>>> Stashed changes
 end

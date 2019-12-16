@@ -1,6 +1,6 @@
 .mypage-sidebar
   .mypage-sidebar__container
-    = link_to  do
+    = link_to users_path do
       #sidebar-active.mypage-sidebar__container__title
         %h2.weight マイページ
         %i.fa.fa-chevron-right{"aria-hidden" => "true"}
@@ -69,7 +69,7 @@
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
     .sidebar-config
       %p 設定
-      = link_to edit_user_path do
+      = link_to edit_user_path(current_user) do
         .mypage-sidebar__container__title
           %h2 プロフィール
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
@@ -85,7 +85,7 @@
         .mypage-sidebar__container__title
           %h2 メール/パスワード
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
-      = link_to  do
+      = link_to user_path(current_user) do
         .mypage-sidebar__container__title
           %h2 本人情報
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}

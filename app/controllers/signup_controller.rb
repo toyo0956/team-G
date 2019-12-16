@@ -3,6 +3,7 @@ class SignupController < ApplicationController
   #before_action :save_to_session_step1, only: :step2 後のvalidationチェックで使う
   #before_action :save_to_session_step2, only: :step3
   #before_action :save_to_session_step3, only: :step4
+  #
 
   def step1
     @user = User.new
@@ -21,7 +22,7 @@ class SignupController < ApplicationController
   end
 
   def done
-    sign_in User.find(session[:id]) unless user_signed_in?
+    sign_in User.find(session[:id]) unless user_signed_in? 
   end
 
   #一括保存
@@ -45,7 +46,7 @@ class SignupController < ApplicationController
       redirect_to step1_signup_index_path
     end
 
-    @address = Address.new(
+    @address = Address.create(
       user: @user,
       postal_code: session[:postal_code],
       prefecture_id: session[:prefecture_id],
@@ -54,16 +55,15 @@ class SignupController < ApplicationController
       building_name: session[:building_name],
       phone_number: session[:phone_number]
     )
-
+    Payjp.api_key = 'sk_test_70d34ef94c5c548af7044b85'
+    customer = Payjp::Customer.create(card: params['payjp-token'])
     @card = Card.new(
       user: @user,
-      card_number: card_params[:card_number],
-      expiration_month: card_params[:expiration_month],
-      expiration_year: card_params[:expiration_year],
-      security_cord: card_params[:security_cord]
+      customer_id: customer.id,
+      card_id: customer.default_card
     )
 
-    if @address.save && @card.save
+    if @card.save
       reset_session
       session[:id] = @user.id
       redirect_to done_signup_index_path
@@ -132,12 +132,4 @@ class SignupController < ApplicationController
       )
     end
 
-    def card_params
-      params.require(:card).permit(
-        :card_number,
-        :expiration_month,
-        :expiration_year,
-        :security_cord
-      )
-    end
 end

@@ -1,0 +1,15 @@
+- case params.values_at :controller, :action
+
+- when ['users', 'index']
+  - breadcrumb :users
+
+- when ['users', 'edit']
+  - breadcrumb :edit
+
+- when ['users', 'show']
+  - breadcrumb :show
+
+- when ['items', 'new']
+  - breadcrumb :items_new
+
+= breadcrumbs separator: " &nbsp;&nbsp;&#12297;&nbsp; "

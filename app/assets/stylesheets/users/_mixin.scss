@@ -1,0 +1,13 @@
+
+@mixin users-wrapper{
+  width:100%;
+  height:100%;
+  background: rgb(245, 245, 245);
+}
+
+@mixin users-container {
+  width:1020px;
+  overflow: hidden;
+  margin:0 auto;
+  padding:40px 0;
+}
