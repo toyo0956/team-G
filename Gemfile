@@ -81,4 +81,8 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'active_hash'
 gem "gretel"
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
 gem 'rails-i18n'
