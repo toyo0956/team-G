@@ -8,10 +8,10 @@
       .content__boxtt
         .content__boxestt
           .content__formtt
-            = form_for @card, url: signup_index_path, method: :post do |f|
+            = form_with url: signup_index_path, method: :post, html: { name: "inputForm" } do |f|
               = f.label :card_number, 'カード番号', class: 'label__title'
               %span{class: "form__text"} 必須
-              = f.text_field :card_number, class: 'input__form', placeholder: '半角数字のみ'
+              = f.text_field :card_number, type: 'text', class: 'input__form', placeholder: '半角数字のみ'
 
               %ul.card__icon
                 %li
@@ -35,27 +35,63 @@
                   %br
 
                   .content__select
-                    = f.select :expiration_month, ["01","02","03","04","05","06","07","08","09","10","11","12"], {}, class: 'select__box'
+                    = f.select :exp_month,  [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]], {}, class: 'select__box'
                     =fa_icon 'angle-down', class: "select__icon"
                     %span{class: "select__span"} 月
 
                   .content__select
-                    = f.select :expiration_year, ["19","20","21","22","23","24","25","26","27","28","29"], {}, class: 'select__box'
+                    = f.select :exp_year, [["17",2017],["18",2018],["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]], {}, class: 'select__box'
                     =fa_icon 'angle-down', class: "select__icon"
                     %span{class: "select__span"} 年
 
                 .content__code
-                  = f.label :nickname, 'セキュリティコード', class: 'label__title'
+                  = f.label :security_cord, 'セキュリティコード', class: 'label__title'
                   %span{class: "form__text"} 必須
-                  = f.text_field :security_cord, class: 'input__form', placeholder: 'カード背面4桁もしくは3桁の番号'
+                  = f.text_field :cvc, type: 'text', class: 'input__form', placeholder: 'カード背面4桁もしくは3桁の番号'
 
                   .bottom__info
-                    .bottom__box
+                    .bottom__box#card_token
                       %span{class: "bottom__span"} ?
                       カード裏面の番号とは？
-
-                %button{type:"submit", class:"content__btn"}
+                      = f.submit '追加する', class: 'content-bottom--add-btn', id: 'token_submit'
+                -#%button{type:"submit", class:"content__btn", id: 'token_submit'}
                   次へ進む
 
   .footer 
   = render "user_footer"
+
+:javascript
+  document.addEventListener(
+  "DOMContentLoaded", (e) => {
+    Payjp.setPublicKey("pk_test_d660c0adcca783612b55fd8c");
+    const btn = document.getElementById('token_submit'); //IDがtoken_submitの場合に取得されます
+    btn.addEventListener("click", (e) => {　//ボタンが押されたときに作動します
+      e.preventDefault();　//ボタンを一旦無効化します
+
+      //カード情報生成
+      const card = {
+        number: document.getElementById("card_number").value,
+        cvc: document.getElementById("cvc").value,
+        exp_month: document.getElementById("exp_month").value,
+        exp_year: document.getElementById("exp_year").value
+      }; //入力されたデータを取得します。
+      console.log(card)
+
+      //トークン生成
+      Payjp.createToken(card, (status, response) => {
+        if (status === 200) { //成功した場合
+          $("#card_number").removeAttr("name");
+          $("#cvc").removeAttr("name");
+          $("#exp_month").removeAttr("name");
+          $("#exp_year").removeAttr("name"); //カード情報を自分のサーバにpostせず削除します
+          $("#card_token").append(
+            $('<input type="hidden" name="payjp-token">').val(response.id)
+          ); //トークンを送信できるように隠しタグを生成
+          document.inputForm.submit();
+          alert("登録が完了しました"); //確認用
+        } else {
+          alert("カード情報が正しくありません。"); //確認用
+        }
+      });
+    });
+  },false);

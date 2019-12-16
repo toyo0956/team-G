@@ -20,10 +20,18 @@ class ItemsController < ApplicationController
       @item = Item.find(params[:id])
     end
 
+  # current_user.idによる条件分岐 未実装
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region_id, :category, :days, :price, images: []).merge(user_id: current_user.id)
   end
 
+  def show
+  end
 
 end
