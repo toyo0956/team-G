@@ -1,11 +1,12 @@
 .main {
   width: 100vw;
   height: 100%;
+  
   .bg__header {
     background-color: $white;
     .main__header {
       height: 150px;
-      margin: 10px 15%;
+      margin: 10px 10%;
       &-text {
         height: 60%;
         text-align: center;
@@ -21,7 +22,8 @@
           display: flex;
           margin: 10px auto;
           position: relative;
-          left: 20%;
+          left: 10%;
+          width:70%;
           li {
             margin-left: 15px;
             a {
@@ -45,8 +47,15 @@
       margin: 10px 10%;
       &-text {
         font-size: 26px;
-        padding: 50px 0 15px;
+        padding: 50px 0 5px;
         display: flex;
+        h1 {
+          font-size: 26px;
+          position: relative;
+          left: 10px;
+          font-weight: bold;
+          color: #333;
+        }
         .view__content {
           display: flex;
           text-decoration: none;
@@ -82,32 +91,36 @@
             .content-above {
               width: 100%;
               height: 75%;
-              img {
+              .content__image {
                 z-index: 1;
                 width: 100%;
                 height: 100%;
               }
-              span {
+              .content__price {
                 z-index: 2;
                 position: relative;
                 top: -40px;
                 color: $white;
                 background: rgba(0, 0, 0, 0.4);
-                padding: 5px 10px;
+                padding: 5px 12px;
                 font-size: 16px;
-                border-radius: 0 25% 25% 0
+                border-radius: 0 25% 25% 0;
+              }
+              .content__price:before {
+                content: '¥';
               }
             }
             .content-below {
               overflow: hidden;
               height: 22%;
               text-overflow: ellipsis;
-              p {
+              .content__text {
                 color: #333;
                 width:90%;
                 height: 100%;
                 margin: 10px auto;
-                font-size: 14px;
+                font-size: 18px;
+                overflow-wrap: break-word;
               }
             }
           }

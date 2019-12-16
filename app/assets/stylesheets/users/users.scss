@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 header {
-  box-shadow: none;
+  // box-shadow: none;
 }
 
 
@@ -18,14 +18,14 @@ a {
   height:49px;
   border: 1px solid #eee;
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-   -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-   -moz-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  -moz-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
 
   &__container {
     width:1020px;
     margin:0 auto;
     line-height: 49px;
-
+  }
   &__content a{
     text-decoration: none;
     list-style: none;
@@ -42,7 +42,6 @@ a {
   &__content a span:last-child{
     font-weight: 600;
   }
- }
 }
 
 .mypage {
@@ -50,18 +49,17 @@ a {
   height:100%;
   background: rgb(245, 245, 245);
   
-&__main{
-  width:1020px;
-  overflow: hidden;
-  margin:0 auto;
-  padding:40px 0;
- }
+  &__main{
+    width:1020px;
+    overflow: hidden;
+    margin:0 auto;
+    padding:40px 0;
+  }
 }
 
 .mypage-sidebar {
   float: left;
   display: block;
-  margin-top: -18px;
   max-width:320px;
   width:100%;
 

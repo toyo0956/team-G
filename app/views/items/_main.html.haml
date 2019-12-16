@@ -21,76 +21,14 @@
           %p もっと見る
           %i.fas.fa-arrow-right
       %ul.main__contents-lists
-        %li.main__content
-          = link_to '#', class: 'content__anchor' do
-            .content-above
-              = image_tag asset_path("sample2.jpg"), class: 'content__image'
-              %span ¥60,000
-            .content-below
-              %p.content__text 財布です。海に落としたので磯の香りがします。プレミア価格で販売します。
-        %li.main__content
-          = link_to '#', class: 'content__anchor' do
-            .content-above
-              = image_tag asset_path("sample2.jpg"), class: 'content__image'
-              %span ¥60,000
-            .content-below
-              %p.content__text 財布です。海に落としたので磯の香りがします。プレミア価格で販売します。
-        %li.main__content
-          = link_to '#', class: 'content__anchor' do
-            .content-above
-              = image_tag asset_path("sample2.jpg"), class: 'content__image'
-              %span ¥60,000
-            .content-below
-              %p.content__text 財布です。海に落としたので磯の香りがします。プレミア価格で販売します。
-        %li.main__content
-          = link_to '#', class: 'content__anchor' do
-            .content-above
-              = image_tag asset_path("sample2.jpg"), class: 'content__image'
-              %span ¥60,000
-            .content-below
-              %p.content__text 財布です。海に落としたので磯の香りがします。プレミア価格で販売します。
-        %li.main__content
-          = link_to '#', class: 'content__anchor' do
-            .content-above
-              = image_tag asset_path("sample2.jpg"), class: 'content__image'
-              %span ¥60,000
-            .content-below
-              %p.content__text 財布です。海に落としたので磯の香りがします。プレミア価格で販売します。
-        %li.main__content
-          = link_to '#', class: 'content__anchor' do
-            .content-above
-              = image_tag asset_path("sample2.jpg"), class: 'content__image'
-              %span ¥60,000
-            .content-below
-              %p.content__text 財布です。海に落としたので磯の香りがします。プレミア価格で販売します。
-        %li.main__content
-          = link_to '#', class: 'content__anchor' do
-            .content-above
-              = image_tag asset_path("sample2.jpg"), class: 'content__image'
-              %span ¥60,000
-            .content-below
-              %p.content__text 財布です。海に落としたので磯の香りがします。プレミア価格で販売します。
-        %li.main__content
-          = link_to '#', class: 'content__anchor' do
-            .content-above
-              = image_tag asset_path("sample2.jpg"), class: 'content__image'
-              %span ¥60,000
-            .content-below
-              %p.content__text 財布です。海に落としたので磯の香りがします。プレミア価格で販売します。
-        %li.main__content
-          = link_to '#', class: 'content__anchor' do
-            .content-above
-              = image_tag asset_path("sample2.jpg"), class: 'content__image'
-              %span ¥60,000
-            .content-below
-              %p.content__text 財布です。海に落としたので磯の香りがします。プレミア価格で販売します。
-        %li.main__content
-          = link_to '#', class: 'content__anchor' do
-            .content-above
-              = image_tag asset_path("sample2.jpg"), class: 'content__image'
-              %span ¥60,000
-            .content-below
-              %p.content__text 財布です。海に落としたので磯の香りがします。プレミア価格で販売します。
+        - @items.each do |item|
+          %li.main__content
+            = link_to item_path(item), class: 'content__anchor' do
+              .content-above
+                = image_tag item.images.first, class: 'content__image'
+                = tag.span item.price, class: 'content__price'
+              .content-below
+                = simple_format item.description, class: 'content__text'
 
 
 

@@ -1,12 +1,13 @@
-%footer.single-footer
+.single-footer
   %nav
     %ul 
       %li
-        %a{href: '#'}       プライバシーポリシー
+        %a{href: '#'} プライバシーポリシー
       %li
         %a{href: '#'} メルカリ利用規約
       %li
         %a{href: '#'} 特定商品に関する表記
-    %img{src:'logo_gray.svg', class:"footer-icon"}
+    -# %img{src:'logo_gray.svg', class:"footer-icon"}
+    = image_tag 'logo_gray.svg', class: 'footer-icon'
   %p
     %small  ©️2019 fmarket,Inc.
