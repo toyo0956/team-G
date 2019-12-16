@@ -1,11 +1,11 @@
 %header
-  .top-page__header
-    .top-page__header-above
+  .show-page__header
+    .show-page__header-above
       %img.header-logo{src: 'fmarket_logo_red.svg'}
       %input{tepe: 'text', placeholder: '何かお探しですか?', class: 'search-box'} 
       %i.fas.fa-search
-    .top-page__header-below
-      .top-page__header-below-left
+    .show-page__header-below
+      .show-page__header-below-left
         .search__lists
           .search__list-right
             %a{href: '#'}
@@ -15,7 +15,7 @@
             %a{href: '#'}
               %i.fas.fa-tags
               ブランドから探す
-      .top-page__header-below-right
+      .show-page__header-below-right
         = link_to '#' do
           %i.far.fa-heart
           いいね！一覧
@@ -25,6 +25,6 @@
         = link_to '#' do
           %i.fas.fa-check
           やることリスト
-        = link_to '#' do
+        = link_to destroy_user_session_path, method: :delete do
           %i.far.fa-user-circle
           マイページ

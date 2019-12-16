@@ -1,7 +1,10 @@
 
 = render "sign"
 .top-page
-  = render 'header'
+  - if user_signed_in?
+    =  render 'header.show'
+  - else
+    = render 'header'
   .top-page__header-image
     = image_tag 'top-page-header.jpg', class: 'header-image'
   .top-page__section-pic

@@ -91,10 +91,10 @@ option {
 
 .call__content {
   background-color: rgb(245, 245, 245);
-  height: 100vh;
+  height: 65vh;
   width: 100vw;
   .contents {
-    height: calc(100vh - 128px - 220px);
+    height: 100%;
     .content {
       width: 700px;
       margin: 0 auto;
@@ -152,7 +152,6 @@ option {
             &:hover {
               text-decoration: underline;
               opacity: 0.7;
-              
             }
           }
         }
@@ -231,8 +230,21 @@ option {
             line-height: 14px;
             font-size: 12px;
             text-align: center;
-            
           }
+        }
+        .content-bottom--add-btn {
+          display: block;
+          text-decoration: none;
+          color: #fff;
+          background-color: red;
+          border: 1px solid #ea352d;
+          height: 50px;
+          width: 100%;
+          text-align: center;
+          line-height: 50px;
+          transition: all ease-out .3s;
+          opacity: 0.9;
+          margin-top: 20px;
         }
       }
     }
