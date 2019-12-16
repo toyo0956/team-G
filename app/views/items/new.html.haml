@@ -12,9 +12,11 @@
           %span 必須
           %p 最大10枚までアップロードできます
           .image_box
-            = f.file_field :images, multiple: true, class: 'image__form'
-            %h3 ドラッグアンドドロップ
-            %h3 またはクリックしてファイルをアップロード
+            = f.label :image, class: 'form__mask__image' do
+              = f.file_field :image, class: 'image__form'
+            .image-placeholder
+              %h3 ドラッグアンドドロップ
+              %h3 またはクリックしてファイルをアップロード
           .new-page__main__form.item__form
             %h1 商品名
             %span 必須
@@ -47,7 +49,6 @@
               %h1 配送元の地域
               %span 必須
               = f.collection_select :region_id, Prefecture.all, :id, :name, prompt: "---", class: 'input'
-
               %h1 発送までの日数
               %span 必須
               = f.select :days, ["1〜2日で発送", "2〜3日で発送", "4〜7日で発送"], {prompt: "---"}, {class: 'select'}

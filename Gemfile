@@ -82,4 +82,8 @@ gem 'fog-aws'
 gem 'active_hash'
 gem "gretel"
 gem "jquery-rails"
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
 gem 'rails-i18n'
