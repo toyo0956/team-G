@@ -3,6 +3,9 @@ class UsersController < ApplicationController
     @users= User.all
   end
 
+  def logout
+  end
+  
   def show
     @users = User.all
   end
@@ -17,4 +20,6 @@ class UsersController < ApplicationController
   def destroy
   end
   
+  
+
 end
