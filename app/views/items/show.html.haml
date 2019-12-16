@@ -6,15 +6,16 @@
         %h COACHのショルダーバッグ
       .main-item
         .main-item-left-pic
-          = image_tag 'bag.jpg', alt: '#', class: 'main-pic'
-          = image_tag 'bag2.jpg', alt: '#', class: 'sub-pic'
-          = image_tag 'bag3.jpg', alt: '#', class: 'sub-pic'
+          = image_tag @item.images.first, class: 'main-pic'
+          - @item.images.each do |image|
+            = image_tag image, class: 'sub-pic'
         .main-item-right-detail
           %table
             %tr
               %th 出品者
               %td
-                = link_to 'haru', '#'
+                = link_to '#' do
+                  = @item.user.nickname
                 .three-faces
                   %i.fas.fa-grin
                   %span 29
@@ -25,9 +26,12 @@
             %tr
               %th カテゴリー
               %td
-                = link_to 'レディース', '#', class: 'category-text'
-                = link_to 'バッグ', '#', class: 'category-text'
-                = link_to 'ショルダーバッグ', '#', class: 'category-text last-text'
+                = link_to '#', class: 'category-text' do
+                  = @item.category
+                = link_to '#', class: 'category-text' do
+                  = @item.category
+                = link_to '#', class: 'category-text' do
+                  = @item.category
             %tr
               %th ブランド
               %td
@@ -35,32 +39,32 @@
             %tr
               %th 商品の状態
               %td
-                %p やや傷や汚れあり
+                = simple_format @item.condition
             %tr
               %th 配送料の負担
               %td
-                %p 送料込み(出品者負担)
+                = simple_format @item.feepayer
             %tr
               %th 配送の方法
               %td
-                %p ゆうゆうメルカリ便
+                = simple_format @item.method
             %tr
               %th 配送元地域
               %td
-                = link_to '千葉', '#'
+                = link_to '#' do
+                  = @item.region.name
             %tr
               %th 発送日の目安
               %td
-                %p 2~3日で発送
+                = @item.days
       .item-price
         %h1
-          ¥8,500
+          = @item.price
           %span (税込)
           %span.postage 送料込み
         = link_to '購入画面に進む', '#', class: 'buy-btn'
       .item-description
-        %p COACHのショルダーバッグです。
-        %p 10年ほど前に購入し、一箇所キズがあります。（写真3枚目）自宅保管のためご理解頂ける方よろしくお願い致します。
+        = simple_format @item.description
         .item-description--below
           = link_to '#', class: 'gray-links-good' do
             %i.far.fa-heart
@@ -103,7 +107,7 @@
             %i.fab.fa-pinterest-square
 
     %p.items-box__header 
-      = link_to 'haruさんのその他の出品', '#'
+      = link_to "#{@item.user.nickname}さんのその他の出品", '#'
     .user-items
       %ul.items-box
         %li.item-box

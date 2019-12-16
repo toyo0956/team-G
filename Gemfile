@@ -82,3 +82,4 @@ gem 'fog-aws'
 gem 'active_hash'
 gem "gretel"
 gem "jquery-rails"
+gem 'rails-i18n'
