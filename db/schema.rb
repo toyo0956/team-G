@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2019_12_13_085850) do
     t.string "condition", null: false
     t.string "feepayer", null: false
     t.string "method", null: false
-    t.string "region", null: false
+    t.integer "region_id", null: false
     t.string "days", null: false
     t.string "price", null: false
     t.string "category", null: false
