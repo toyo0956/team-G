@@ -81,3 +81,4 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem 'active_hash'
 gem "gretel"
+gem "jquery-rails"

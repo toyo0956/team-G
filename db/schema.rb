@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_031443) do
     t.string "city", null: false
     t.string "house_number", null: false
     t.string "building_name", null: false
-    t.string "phone_number", null: false
+    t.string "phone_number"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,11 +26,9 @@ ActiveRecord::Schema.define(version: 2019_12_11_031443) do
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "card_number", null: false
-    t.string "expiration_month", null: false
-    t.string "expiration_year", null: false
-    t.string "security_cord", null: false
-    t.bigint "user_id"
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_cards_on_user_id"
