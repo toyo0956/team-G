@@ -5,10 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
 
   has_one :address
-  has_one :card
+  has_many :cards
   has_many :items
-  accepts_nested_attributes_for :address
-  accepts_nested_attributes_for :card
 
 
 
@@ -42,6 +40,7 @@ class User < ApplicationRecord
     end
     return user
   end
+
 
 
 end
