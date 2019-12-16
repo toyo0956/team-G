@@ -90,32 +90,36 @@
             .content-above {
               width: 100%;
               height: 75%;
-              img {
+              .content__image {
                 z-index: 1;
                 width: 100%;
                 height: 100%;
               }
-              span {
+              .content__price {
                 z-index: 2;
                 position: relative;
                 top: -40px;
                 color: $white;
                 background: rgba(0, 0, 0, 0.4);
-                padding: 5px 10px;
+                padding: 5px 12px;
                 font-size: 16px;
-                border-radius: 0 25% 25% 0
+                border-radius: 0 25% 25% 0;
+              }
+              .content__price:before {
+                content: '¥';
               }
             }
             .content-below {
               overflow: hidden;
               height: 22%;
               text-overflow: ellipsis;
-              p {
+              .content__text {
                 color: #333;
                 width:90%;
                 height: 100%;
                 margin: 10px auto;
-                font-size: 14px;
+                font-size: 18px;
+                overflow-wrap: break-word;
               }
             }
           }
