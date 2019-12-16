@@ -15,8 +15,17 @@ class ItemsController < ApplicationController
     end
   end 
 
+  # current_user.idによる条件分岐 未実装
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+  end
+
   private
   def item_params
     params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region, :category, :days, :price, :image)
+  end
+
+  def show
   end
 end
