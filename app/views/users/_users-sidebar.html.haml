@@ -93,7 +93,7 @@
         .mypage-sidebar__container__title
           %h2 電話番号の確認
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
-      = link_to destroy_user_session_path, method: :destroy do
+      = link_to logout_user_path(current_user) do
         .mypage-sidebar__container__title
           %h2 ログアウト
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}

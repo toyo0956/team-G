@@ -13,6 +13,18 @@ Rails.application.routes.draw do
     end
   end
   root to: 'items#index'
+<<<<<<< Updated upstream
   resources :users 
   resources :items, only: [:new]
+=======
+
+  resources :users do
+   member do
+    get "logout" => "logout"
+   end
+  end
+
+  resources :items, only: [:index, :new, :create, :show]
+
+>>>>>>> Stashed changes
 end
