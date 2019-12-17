@@ -1,4 +1,5 @@
 = render "user_header"
+- var = ENV['PAYJP_TEST_PUBLIC_KEY']
 
 .call__content
   .contents
@@ -63,7 +64,7 @@
 :javascript
   document.addEventListener(
   "DOMContentLoaded", (e) => {
-    Payjp.setPublicKey("pk_test_d660c0adcca783612b55fd8c");
+    Payjp.setPublicKey("#{var}");
     const btn = document.getElementById('token_submit'); //IDがtoken_submitの場合に取得されます
     btn.addEventListener("click", (e) => {　//ボタンが押されたときに作動します
       e.preventDefault();　//ボタンを一旦無効化します

@@ -8,6 +8,7 @@
         %p 会員登録が完了しました。
     .form
       .next-btn
+      = link_to items_path do
         %button{type:"submit",class:"btn-red"}
           メルカリをはじめる 
 = render 'user_footer'
