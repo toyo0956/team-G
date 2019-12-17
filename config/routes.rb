@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   resources :items, only: [:new]
   resources :users do
    member do
-    get "logout" => "logout"
+    get "logout"
+    get "profile"
+    get "userinfo"
    end
   end
 

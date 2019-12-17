@@ -1,12 +1,12 @@
 .main
-  = render 'items/header'
+  = render 'items/header.show'
 .mypage
   .mypage__main
     = render 'users/users-sidebar'
     .single-main 
       .single-inner
         .btn
-        = link_to items_path do
+        = link_to destroy_user_session_path, method: :delete do
           %button{type:"submit",class:"btn-red"}
             ログアウト
 .foot 

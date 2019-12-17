@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
   def index
-    @users= User.all
+    @users = User.all
   end
 
   def logout
   end
   
   def show
-    @users = User.all
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -19,7 +19,14 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+  def profile
+    @user = User.find(params[:id])
+  end
   
+  def userinfo
+    @user = User.find(params[:id])
+  end
   
 
 end
