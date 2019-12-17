@@ -1,10 +1,7 @@
 class SignupController < ApplicationController
 
-  #before_action :save_to_session_step1, only: :step2 後のvalidationチェックで使う
-  #before_action :save_to_session_step2, only: :step3
-  #before_action :save_to_session_step3, only: :step4
-  #
-
+  require 'payjp'
+  
   def step1
     @user = User.new
   end
@@ -55,7 +52,7 @@ class SignupController < ApplicationController
       building_name: session[:building_name],
       phone_number: session[:phone_number]
     )
-    Payjp.api_key = 'sk_test_70d34ef94c5c548af7044b85'
+    Payjp.api_key = ENV['PAYJP_TEST_SECRET_KEY']
     customer = Payjp::Customer.create(card: params['payjp-token'])
     @card = Card.new(
       user: @user,
