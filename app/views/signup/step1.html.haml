@@ -1,9 +1,9 @@
 = render "user_header"
 
-%main.single-main
+%main.single-main-1st
   .register-head
     %h2 会員情報入力
-  .register-form
+  .register-form-1st
     = form_for @user, url: step2_signup_index_path, method: :post do |f|
       .form
         = f.label :nickname, 'ニックネーム', class: 'form-label'
