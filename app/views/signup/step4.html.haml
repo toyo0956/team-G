@@ -53,17 +53,16 @@
                     .bottom__box#card_token
                       %span{class: "bottom__span"} ?
                       カード裏面の番号とは？
-                      = f.submit '追加する', class: 'content-bottom--add-btn', id: 'token_submit'
-                -#%button{type:"submit", class:"content__btn", id: 'token_submit'}
-                  次へ進む
+                    = f.submit '追加する', class: 'content-bottom--add-btn', id: 'token_submit'
 
-  .footer 
+
+
   = render "user_footer"
 
 :javascript
   document.addEventListener(
   "DOMContentLoaded", (e) => {
-    Payjp.setPublicKey("pk_test_d660c0adcca783612b55fd8c");
+    Payjp.setPublicKey("pk_test_f53cb42d723109d1c6a58a6b");
     const btn = document.getElementById('token_submit'); //IDがtoken_submitの場合に取得されます
     btn.addEventListener("click", (e) => {　//ボタンが押されたときに作動します
       e.preventDefault();　//ボタンを一旦無効化します
@@ -95,3 +94,4 @@
       });
     });
   },false);
+

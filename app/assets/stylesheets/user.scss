@@ -1,6 +1,7 @@
-.single-main {
+.single-main-1st {
   text-align: center;
   background-color: #f5f5f5;
+  height: 100%;
   .register-head{
     background-color: #FFFFFF;
     max-width: 700px;
@@ -10,7 +11,7 @@
     font-size: 25px;
     border-bottom: solid 1px #f5f5f5;
   }
-  .register-form {
+  .register-form-1st {
     background-color: #FFFFFF;
     height: 1128px;
     width: 700px;
@@ -46,6 +47,16 @@
         background: #808080;
         margin: 0px 0px 0px 8px;
         padding: 2px 4px;            
+      }
+      select {
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        height: 48px;
+        width: 343px;
+        font-size: 18px;
+        background-color: #FFFFFF;
+        margin: 8px 0px 0px;
+        padding: 10px 16px 8px;
       }
       .form-input{
         border-radius: 4px;
@@ -96,22 +107,21 @@
     }
 
     .next-btn {
-     text-align:center;
-    
-    .btn-red-submit {
-      height: 50px;
-      width: 343px;
-      color: #FFFFFF;
-      font-size: 15px;
-      background-color: #EA352D;
-      margin: 24px 0px 0px;
-      
+      text-align:center;
+      .btn-red {
+        height: 50px;
+        width: 343px;
+        color: #FFFFFF;
+        font-size: 15px;
+        background-color: #EA352D;
+        margin: 24px 0px 0px;
+        
+      }
+      .btn-red:focus{
+        outline: none;
+        background-color: #808080;
+      }
     }
-    .btn-red-submit:focus{
-      outline: none;
-      background-color: #808080;
-    }
-  }
     // 仮置き（= recaptcha_tags)
     .recaptcha-check{
       background-color: #f5f5f5;
@@ -162,5 +172,26 @@
       padding: 30px 0 15px;
     }
   }  
+}
+
+.single-main {
+  .register-form {
+    .form {
+      select {
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        height: 48px;
+        width: 343px;
+        font-size: 18px;
+        background-color: #FFFFFF;
+        margin: 8px 0px 0px;
+        padding: 10px 16px 8px;
+      }
+      select:focus {
+        border: 1px solid #0099EB;
+        outline: none;
+      }
+    }
+  }
 }
 

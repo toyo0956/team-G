@@ -7,7 +7,6 @@
       .new-page__main__form
         = form_for(@item, url: items_path) do |f|
           = render 'layouts/error_messages', model: f.object
-
           %h1 出品画像 
           %span 必須
           %p 最大10枚までアップロードできます

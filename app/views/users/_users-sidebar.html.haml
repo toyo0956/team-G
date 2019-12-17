@@ -69,7 +69,7 @@
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
     .sidebar-config
       %p 設定
-      = link_to edit_user_path(current_user) do
+      = link_to profile_user_path(current_user) do
         .mypage-sidebar__container__title
           %h2 プロフィール
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
@@ -85,7 +85,7 @@
         .mypage-sidebar__container__title
           %h2 メール/パスワード
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
-      = link_to user_path(current_user) do
+      = link_to userinfo_user_path(current_user) do
         .mypage-sidebar__container__title
           %h2 本人情報
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
@@ -93,7 +93,7 @@
         .mypage-sidebar__container__title
           %h2 電話番号の確認
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
-      = link_to destroy_user_session_path, method: :destroy do
+      = link_to logout_user_path(current_user) do
         .mypage-sidebar__container__title
           %h2 ログアウト
           %i.fa.fa-chevron-right{"aria-hidden" => "true"}
