@@ -7,13 +7,12 @@
       .new-page__main__form
         = form_for(@item, url: items_path) do |f|
           = render 'layouts/error_messages', model: f.object
-
           %h1 出品画像 
           %span 必須
           %p 最大10枚までアップロードできます
           .image_box
-            = f.label :image, class: 'form__mask__image' do
-              = f.file_field :image, class: 'image__form'
+            = f.label :images, class: 'form__mask__image' do
+              = f.file_field :images, multiple: true, class: 'image__form'
             .image-placeholder
               %h3 ドラッグアンドドロップ
               %h3 またはクリックしてファイルをアップロード

@@ -8,8 +8,21 @@
         %p 会員登録が完了しました。
     .form
       .next-btn
+      = link_to items_path do
         %button{type:"submit",class:"btn-red"}
           メルカリをはじめる 
-= render 'user_footer'
+.single-footer.last-page-footer
+  %nav
+    %ul 
+      %li
+        %a{href: '#'} プライバシーポリシー
+      %li
+        %a{href: '#'} メルカリ利用規約
+      %li
+        %a{href: '#'} 特定商品に関する表記
+    -# %img{src:'logo_gray.svg', class:"footer-icon"}
+    = image_tag 'logo_gray.svg', class: 'footer-icon'
+  %p
+    %small  ©️2019 fmarket,Inc.
 
 

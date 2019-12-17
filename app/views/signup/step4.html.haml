@@ -1,4 +1,5 @@
 = render "user_header"
+- var = ENV['PAYJP_TEST_PUBLIC_KEY']
 
 .call__content
   .contents
@@ -53,11 +54,10 @@
                     .bottom__box#card_token
                       %span{class: "bottom__span"} ?
                       カード裏面の番号とは？
-                      = f.submit '追加する', class: 'content-bottom--add-btn', id: 'token_submit'
-                -#%button{type:"submit", class:"content__btn", id: 'token_submit'}
-                  次へ進む
+                    = f.submit '追加する', class: 'content-bottom--add-btn', id: 'token_submit'
 
-  .footer 
+
+
   = render "user_footer"
 
 :javascript
@@ -95,3 +95,4 @@
       });
     });
   },false);
+
