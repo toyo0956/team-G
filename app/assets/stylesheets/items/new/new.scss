@@ -85,11 +85,11 @@
             top:50%;
             left:50%;
             transform: translate(-50%,-50%);
-            text-align:center;
-          h3 {
-            font-weight: 600;
-          }
-            
+            text-align: center;
+            pointer-events: none;
+            h3 {
+              font-weight: 600;
+            }
           }
           .form__mask__image{ 
             width:100%;
@@ -104,6 +104,9 @@
                 border:1px solid $light_blue;
               }
             }
+          }
+          .form__mask__image:hover {
+            cursor: pointer;
           }
         }
         .image_box:hover {

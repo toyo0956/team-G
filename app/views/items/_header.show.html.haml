@@ -1,7 +1,7 @@
 %header
   .show-page__header
     .show-page__header-above
-      %img.header-logo{src: 'fmarket_logo_red.svg'}
+      = image_tag 'fmarket_logo_red.svg', class: 'header-logo'
       %input{tepe: 'text', placeholder: '何かお探しですか?', class: 'search-box'} 
       %i.fas.fa-search
     .show-page__header-below
@@ -25,6 +25,6 @@
         = link_to '#' do
           %i.fas.fa-check
           やることリスト
-        = link_to destroy_user_session_path, method: :delete do
+        = link_to user_path(current_user.id) do
           %i.far.fa-user-circle
           マイページ
