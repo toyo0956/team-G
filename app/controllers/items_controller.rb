@@ -34,7 +34,4 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region_id, :category, :days, :price, images: []).merge(user_id: current_user.id)
   end
 
-  def show
-  end
-
 end

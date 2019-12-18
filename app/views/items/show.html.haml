@@ -98,8 +98,8 @@
 
 
 
-    .sns
-      .sns-icons
+    .show-page-sns
+      .show-page-sns-icons
         .facebook
           = link_to 'https://facebook.com', target: '_blank' do
             %i.fab.fa-facebook-square
@@ -220,3 +220,5 @@
                 %span.price ¥60,000
                 %i.far.fa-heart
                   %span 0
+= image_tag 'top-page-header.jpg', class: 'footer-image'
+= render '/items/footer' 
