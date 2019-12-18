@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :destroy]
+
   def index
     @items = Item.all
   end
@@ -21,18 +23,22 @@ class ItemsController < ApplicationController
   
   
   def show
-    @item = Item.find(params[:id])
   end
 
-  # current_user.idによる条件分岐 未実装
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      render items_path
+    end
   end
 
   private
   def item_params
     params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region_id, :category, :days, :price, images: []).merge(user_id: current_user.id)
   end
-
+  
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
