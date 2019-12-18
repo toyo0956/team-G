@@ -66,9 +66,15 @@
           = @item.price
           %span (税込)
           %span.postage 送料込み
-        = link_to '購入画面に進む', '#', class: 'buy-btn'
+        - if user_signed_in? && current_user.id == @item.user_id
+          = link_to '商品の編集', '#', class: 'item-edit-btn'
+          %p.item-select-or or
+          = link_to '出品を一旦停止する', '#', class: 'item-stop-btn'
+          = link_to 'この商品を削除する', '#', class: 'item-delete-btn'
+        - else
+          = link_to '購入画面に進む', '#', class: 'buy-btn'
       .item-description
-        = simple_format @item.description
+        = simple_format @item.description, class: 'item-description'
         .item-description--below
           = link_to '#', class: 'gray-links-good' do
             %i.far.fa-heart

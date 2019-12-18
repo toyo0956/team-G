@@ -19,9 +19,10 @@ class ItemsController < ApplicationController
     end
   end 
   
-    def show
-      @item = Item.find(params[:id])
-    end
+  
+  def show
+    @item = Item.find(params[:id])
+  end
 
   # current_user.idによる条件分岐 未実装
   def destroy
