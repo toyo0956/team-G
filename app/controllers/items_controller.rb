@@ -24,10 +24,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  # current_user.idによる条件分岐 未実装
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to root_path
   end
 
   private
