@@ -125,7 +125,7 @@
             font-size: 16px;
           }
         }
-        .buy-btn {
+        .buy-btn, .item-edit-btn, .item-stop-btn, .item-delete-btn {
           display: block;
           width: 86%;
           height: 55px;
@@ -135,16 +135,32 @@
           text-decoration: none;
           text-align: center;
           line-height: 55px;
-          margin: 10px auto 60px;
+          margin: 20px auto;
           font-weight: bold;
-          opacity: 0.98;
+          opacity: 0.9;
         }
         .buy-btn:hover {
           opacity: 1;
         }
+        .item-stop-btn, .item-delete-btn {
+          background-color: #ccc;
+        }
+        .item-delete-btn:hover {
+          opacity: 1;
+        }
+        .item-stop-btn:hover {
+          opacity: 1;
+        }
+        .item-select-or {
+          font-weight: bold;
+          font-size: 30px;
+          text-align: center;
+        }
       }
       .item-description {
         width: 86%;
+        height: 100%;
+        padding: 10px 0 20px;
         margin: 0 auto;
         color: #333;
         font-size: 18px;
@@ -217,7 +233,7 @@
         width: 86%;
         margin: 0 auto;
         textarea {
-          width: 95%;
+          width: 100%;
           height: 100px;
           margin: 10px auto;
           padding: 15px;
