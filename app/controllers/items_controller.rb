@@ -27,6 +27,8 @@ class ItemsController < ApplicationController
 
   def destroy
     if @item.destroy
+      attachments = ActiveStorage::Attachment.where(id: params[:deleted_img_ids])
+      attachments.map(&:purge)
       redirect_to root_path
     else
       render items_path
