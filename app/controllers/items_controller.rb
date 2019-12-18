@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :set_item, only: [:edit, :update, :show]
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
 
 
   def index
@@ -37,10 +37,12 @@ class ItemsController < ApplicationController
   def show
   end
 
-  # current_user.idによる条件分岐 未実装
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      render items_path
+    end
   end
 
   private

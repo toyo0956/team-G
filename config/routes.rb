@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     get "userinfo"
    end
   end
-  
+
   resources :items
+
 end
