@@ -1,5 +1,8 @@
 .item-show-page
-  = render 'header.show'
+  - if user_signed_in?
+    = render 'header.show'
+  - else 
+    = render 'header'
   .main
     .main-item-details
       .main-item__header
