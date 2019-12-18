@@ -24,6 +24,6 @@ Rails.application.routes.draw do
    end
   end
 
-  resources :items, only: [:index, :new, :create, :show]
+  resources :items, only: [:index, :new, :create, :show, :edit, :update]
 
 end
