@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
+
+  before_action :set_item, only: [:edit, :update, :show]
+
+
   def index
     @items = Item.all
   end
@@ -20,17 +24,17 @@ class ItemsController < ApplicationController
   end 
   
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update(item_params)
-    redirect_to root_path
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render edit_item_path
+    end
   end
   
   def show
-    @item = Item.find(params[:id])
   end
 
   # current_user.idによる条件分岐 未実装
@@ -44,4 +48,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region_id, :category, :days, :price, images: []).merge(user_id: current_user.id)
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
