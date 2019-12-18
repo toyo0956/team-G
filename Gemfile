@@ -87,4 +87,5 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'rails-i18n'
+gem "aws-sdk-s3", require: false
 gem 'payjp'
