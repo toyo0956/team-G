@@ -1,22 +1,26 @@
-.header
+.users_s1_header
   %h1
     %a{href: '#'}
       = image_tag 'fmarket_logo_red.svg', alt: "Fmarket", class: 'header-logo'
 
-  %nav.header__progress-bar
-    %ol.header__progress-bar__list
-      %li.header__progress-bar__list__item
-        %span 会員情報
-        .header__progress-bar__list__item__status{id: "progress-bar_active"}
-      %li.header__progress-bar__list__item
-        電話番号認証
-        .header__progress-bar__list__item__status
-      %li.header__progress-bar__list__item
-        お届け先住所入力
-        .header__progress-bar__list__item__status
-      %li.header__progress-bar__list__item
-        支払い方法
-        .header__progress-bar__list__item__status
-      %li
-        完了
-        .header__progress-bar__last
+  %nav.progress-bar-navi
+    .header-progress-bar-wrap 
+      %p#progress-bar_step1 会員情報 
+      %span.progress-radius.first#step1
+
+    .header-progress-bar-wrap
+      %p#progress-bar_step2 電話番号認証
+      %span.progress_radius#step2
+
+    .header-progress-bar-wrap
+      %p#progress-bar_step3 お届け先住所入力
+      %span.progress_radius#step3
+
+    .header-progress-bar-wrap
+      %p#progress-bar_step4 支払い方法
+      %span.progress_radius#step4
+
+    .header-progress-bar-wrap
+      %p#progress-bar_done 完了
+      %span.progress_radius.last#done
+

@@ -9,7 +9,7 @@ header {
     &-above {
       height: 45%;
       display: flex;
-      .header-logo {
+      a {
         float: left;
         width: 15%;
         height: 100%;
@@ -33,6 +33,7 @@ header {
       }
     }
     &-below {
+      position: relative;
       height: 50%;
       display: flex;
       margin: 10px 10px 10px 0;
@@ -72,9 +73,9 @@ header {
       }
       &-right {
         display: flex;
-        position: relative;
+        position: absolute;
         top: -3px;
-        left: 19%;
+        right: -25px;
         a {
           height: 50%;
           text-decoration: none;
