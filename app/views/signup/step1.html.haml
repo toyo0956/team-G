@@ -15,12 +15,13 @@
         %span.form-require
         = f.email_field :email, class: 'form-input', placeholder: 'PC・携帯どちらでも可', value: session[:email]
 
-      .form.password
-        = f.label :password, 'パスワード', class: 'form-label'
-        %span.form-require
-        = f.password_field :password, class: 'form-input', placeholder: '7文字以上の半角英数字'
-        %p.form-info ※ 英字と数字の両方を含めて設定してください
-        %input{type:"checkbox", class:"check"} パスワードを表示する
+      - if session[:provider].blank?
+        .form.password
+          = f.label :password, 'パスワード', class: 'form-label'
+          %span.form-require
+          = f.password_field :password, class: 'form-input', placeholder: '7文字以上の半角英数字'
+          %p.form-info ※ 英字と数字の両方を含めて設定してください
+          %input{type:"checkbox", class:"check"} パスワードを表示する
 
       .form
         %h3 本人確認
