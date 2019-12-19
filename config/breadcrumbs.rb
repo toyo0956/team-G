@@ -3,22 +3,27 @@ crumb :root do
 end
 
 crumb :users do
-  link "マイページ", users_path
+  link "マイページ", user_path(current_user)
   parent :root
 end
 
-crumb :edit do
+crumb :profile do
   link "プロフィール", edit_user_path(current_user)
   parent :users
 end
 
-crumb :show do
-  link "本人情報の登録", user_path(current_user)
+crumb :userinfo do
+  link "本人情報の登録", userinfo_user_path(current_user)
   parent :users
 end
 
-crumb :items do
-  link "出品", new_item_path
+crumb :items_new do
+  link "出品する", new_item_path
+  parent :users
+end
+
+crumb :logout_user do
+  link "ログアウト", logout_user_path(current_user)
   parent :users
 end
 
