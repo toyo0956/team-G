@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
+
+  before_action :set_item, only: [:edit, :update, :show, :destroy]
+
+
   def index
     @items = Item.all
   end
@@ -19,14 +23,28 @@ class ItemsController < ApplicationController
     end
   end 
   
-    def show
-      @item = Item.find(params[:id])
-    end
+  def edit
+  end
 
-  # current_user.idによる条件分岐 未実装
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render edit_item_path
+    end
+  end
+  
+  def show
+  end
+
   def destroy
-    item = Item.find(params[:id])
-    item.destroy
+    if @item.destroy
+      attachments = ActiveStorage::Attachment.where(id: params[:deleted_img_ids])
+      attachments.map(&:purge)
+      redirect_to root_path
+    else
+      render items_path
+    end
   end
 
   private
@@ -34,7 +52,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region_id, :category, :days, :price, images: []).merge(user_id: current_user.id)
   end
 
-  def show
+  def set_item
+    @item = Item.find(params[:id])
   end
-
 end

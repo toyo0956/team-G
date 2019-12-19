@@ -45,6 +45,10 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -87,4 +91,5 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'rails-i18n'
+gem "aws-sdk-s3", require: false
 gem 'payjp'

@@ -1,5 +1,8 @@
 .item-show-page
-  = render 'header.show'
+  - if user_signed_in?
+    = render 'header.show'
+  - else 
+    = render 'header'
   .main
     .main-item-details
       .main-item__header
@@ -63,9 +66,15 @@
           = @item.price
           %span (税込)
           %span.postage 送料込み
-        = link_to '購入画面に進む', '#', class: 'buy-btn'
+        - if user_signed_in? && current_user.id == @item.user_id
+          = link_to '商品の編集', edit_item_path(@item), class: 'item-edit-btn'
+          %p.item-select-or or
+          = link_to '出品を一旦停止する', '#', class: 'item-stop-btn'
+          = link_to 'この商品を削除する', item_path(@item.id), method: :delete, class: 'item-delete-btn'
+        - else
+          = link_to '購入画面に進む', '#', class: 'buy-btn'
       .item-description
-        = simple_format @item.description
+        = simple_format @item.description, class: 'item-description'
         .item-description--below
           = link_to '#', class: 'gray-links-good' do
             %i.far.fa-heart
@@ -95,8 +104,8 @@
 
 
 
-    .sns
-      .sns-icons
+    .show-page-sns
+      .show-page-sns-icons
         .facebook
           = link_to 'https://facebook.com', target: '_blank' do
             %i.fab.fa-facebook-square
@@ -217,3 +226,5 @@
                 %span.price ¥60,000
                 %i.far.fa-heart
                   %span 0
+= image_tag 'top-page-header.jpg', class: 'footer-image'
+= render '/items/footer' 

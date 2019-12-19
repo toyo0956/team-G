@@ -1,5 +1,6 @@
 .main
   = render 'items/header.show'
+  = render "users-navigation"
 .mypage
   .mypage__main
     = render 'users/users-sidebar'
@@ -10,4 +11,5 @@
           %button{type:"submit",class:"btn-red"}
             ログアウト
 .foot 
+  = image_tag 'top-page-header.jpg', class: 'footer-image'
   = render 'items/footer'

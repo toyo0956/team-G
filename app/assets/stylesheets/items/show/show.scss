@@ -6,7 +6,9 @@
   padding-bottom: 80px;
   .main {
     height: 100%;
-    margin: 60px 25% 0;
+    width: 50%;
+    margin: 60px auto 0;
+
     &-item-details {
       width: 100%;
       height: 100%;
@@ -123,7 +125,7 @@
             font-size: 16px;
           }
         }
-        .buy-btn {
+        .buy-btn, .item-edit-btn, .item-stop-btn, .item-delete-btn {
           display: block;
           width: 86%;
           height: 55px;
@@ -133,16 +135,32 @@
           text-decoration: none;
           text-align: center;
           line-height: 55px;
-          margin: 10px auto 60px;
+          margin: 20px auto;
           font-weight: bold;
-          opacity: 0.98;
+          opacity: 0.9;
         }
         .buy-btn:hover {
           opacity: 1;
         }
+        .item-stop-btn, .item-delete-btn {
+          background-color: #ccc;
+        }
+        .item-delete-btn:hover {
+          opacity: 1;
+        }
+        .item-stop-btn:hover {
+          opacity: 1;
+        }
+        .item-select-or {
+          font-weight: bold;
+          font-size: 30px;
+          text-align: center;
+        }
       }
       .item-description {
         width: 86%;
+        height: 100%;
+        padding: 10px 0 20px;
         margin: 0 auto;
         color: #333;
         font-size: 18px;
@@ -215,7 +233,7 @@
         width: 86%;
         margin: 0 auto;
         textarea {
-          width: 95%;
+          width: 100%;
           height: 100px;
           margin: 10px auto;
           padding: 15px;
@@ -253,16 +271,15 @@
         float: right;
       }
     }
-    .sns {
-      margin-top: 15px;
+    .show-page-sns {
+      margin-top: 20px;
       padding: 20px 0;
       width: 100%;
       height: 100px;
       background-color: $white;
-      .sns-icons {
+      .show-page-sns-icons {
         text-align: center;
-        line-height: 100px;
-        font-size: 52px;
+        line-height: 90px;
         a:hover {
           opacity: 0.7;
         }
@@ -270,18 +287,23 @@
           display: inline-block;
           i {
             color: #385185;
+            font-size: 52px;
+            margin-right: 15px;
           }
         }
         .twitter {
           display: inline-block;
           i {
             color: #0099e8;
+            font-size: 52px;
+            margin-right: 15px;
           }
         }
         .pinterest {
           display: inline-block;
           i {
             color: #aa262a;
+            font-size: 52px;
           }
         }
       }

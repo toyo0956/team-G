@@ -60,7 +60,7 @@ class SignupController < ApplicationController
       building_name: session[:building_name],
       phone_number: session[:phone_number]
     )
-    Payjp.api_key = ""
+    Payjp.api_key = ENV['PAYJP_TEST_SECRET_KEY']
     customer = Payjp::Customer.create(card: params['payjp-token'])
     @card = Card.new(
       user: @user,
