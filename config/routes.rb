@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get "logout"
     get "profile"
     get "userinfo"
+    get "cardlist"
    end
   end
 

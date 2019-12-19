@@ -27,6 +27,10 @@ class UsersController < ApplicationController
   def userinfo
     @user = User.find(params[:id])
   end
+
+  def cardlist
+    @user = User.find(params[:id])
+  end
   
 
 end

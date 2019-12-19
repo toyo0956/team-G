@@ -1,6 +1,6 @@
-= render 'header'
+= render 'items/header'
 .mypage-container
-  .mypage-side-list
+  = render 'users/users-sidebar'
   .mypage-cardlist-content
     %section.content-chapter
       %h2.content-chapter__head 支払い方法
@@ -11,12 +11,12 @@
           %li
             %form.single-inner__content
               %figure
-                %img
-              .settings-payment-num ************
-              .settings-payment-num 01/20
+                = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2356214421", width: "49", height: "20" 
+              .settings-payment-num ************4242
+              .settings-payment-num 12/20
               %button.settings-payment-remove 削除する
         .settings-not-regist
           = link_to '#', class: 'payment-method' do
             %span 支払い方法について
             %i.fas.fa-angle-right
-= render 'footer'
+= render '/items/footer'
