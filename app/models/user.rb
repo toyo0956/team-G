@@ -14,7 +14,6 @@ class User < ApplicationRecord
     uid = auth.uid
     provider = auth.provider
     snscredential = SnsCredential.where(uid: uid, provider: provider).first
-    # require 'byebug'; byebug
     if snscredential.present?
       user = User.where(id: snscredential.user_id).first
     else
@@ -38,7 +37,7 @@ class User < ApplicationRecord
         )
       end
     end
-    return user
+    return user, snscredential
   end
 
 

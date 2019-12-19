@@ -43,6 +43,14 @@ class SignupController < ApplicationController
       redirect_to step1_signup_index_path
     end
 
+    if session[:provider].present?
+      @snscredential = SnsCredential.create(
+        user: @user,
+        uid: session[:uid],
+        provider: session[:provider]
+      )
+  end
+
     @address = Address.create(
       user: @user,
       postal_code: session[:postal_code],
@@ -73,8 +81,10 @@ class SignupController < ApplicationController
   def save_to_session_step1
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
-    session[:password] = user_params[:password]
-    session[:password_confirmation] = user_params[:password_confirmation]
+    if session[:provider].blank?
+      session[:password] = user_params[:password]
+      session[:password_confirmation] = user_params[:password_confirmation]
+    end
     session[:family_name] = user_params[:family_name]
     session[:first_name] = user_params[:first_name]
     session[:family_name_kana] = user_params[:family_name_kana]
