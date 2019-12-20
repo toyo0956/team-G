@@ -1,0 +1,47 @@
+.items-buy
+  .items-buy__header
+    .items-buy__header__image
+      = image_tag asset_path("fmarket_logo_red.svg"), width: "185px", height: "50px"
+  .items-buy-container
+    .items-buy-container__heading
+      %p 購入内容の確認
+    .items-buy-container__content
+      .items-buy-container__content__show
+        .items-buy-container__content__show__image
+          - if @item.image.attached?
+            = image_tag url_for(@item.image.attach(image)), width:"80px", height: "80px"
+        .items-buy-container__content__show__details
+          %p #{@item.name}
+          %p ¥#{@item.price}
+          %p (税込) 送料込み
+    .items-buy-container__settlement
+      .items-buy-container__settlement__wrap
+        = form_for(@item, url: item_path(@item)) do |f|
+          .items-buy-container__settlement__wrap__price
+            %ul
+              %li 支払い金額
+              %li  ¥#{@item.price}
+          .items-buy-container__settlement__wrap__input
+            %label
+              %input{type:"cheakbox"}
+              %p ポイントを使用 (所持ポイント: P0)
+          .items-buy-container__settlement__wrap__credit
+            = link_to "変更する", ""
+            %ul
+              %li.font-weight 支払い方法
+              %li クレジットカード
+              %li ***********2019
+              %li 有効期限 12/21
+              %li
+                = image_tag asset_path("Visa_2014_logo_detail.svg.png"), width: "50px", height: "15px"
+          .items-buy-container__settlement__wrap__delivery
+            = link_to "変更する", ""
+            %ul
+              %li.font-weight 配送先
+              %li 〒666-6666
+              %li 大阪市 北区 大阪町 999-9
+              %li エキスパート太郎
+              %li
+          .items-buy-container__settlement__wrap__submit
+            = f.submit '購入する', class: 'buy-btn'
+    = render 'signup/user_footer'
