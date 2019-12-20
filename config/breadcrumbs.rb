@@ -27,4 +27,9 @@ crumb :logout_user do
   parent :users
 end
 
+crumb :cardlist do
+  link "支払い方法", cardlist_user_path(current_user)
+  parent :users
+end
+
 
