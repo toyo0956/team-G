@@ -22,6 +22,6 @@ class PurchaseController < ApplicationController
 
 private
   def set_card
-    @card = Card.find(current_user.id)
+    @card = Card.find_by(user_id: current_user)
   end
 end
