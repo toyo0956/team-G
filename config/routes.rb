@@ -15,15 +15,6 @@ Rails.application.routes.draw do
   end
   root to: 'items#index'
 
-  # resources :items do
-  #   resources :purchase do
-  #     member do
-  #       get "pay", to: 'purchase#pay'
-  #       post "show", to: 'purchase#show'
-  #     end
-  #   end
-  # end
-
   resources :items do
     resources :purchase, only: :show do
       member do
