@@ -72,7 +72,7 @@
           = link_to '出品を一旦停止する', '#', class: 'item-stop-btn'
           = link_to 'この商品を削除する', item_path(@item.id), method: :delete, class: 'item-delete-btn'
         - else
-          = link_to '購入画面に進む', buy_item_path(@item.id), class: 'buy-btn'
+          = link_to '購入画面に進む', item_purchase_path(@item), method: :get, class: 'buy-btn'
       .item-description
         = simple_format @item.description, class: 'item-description'
         .item-description--below

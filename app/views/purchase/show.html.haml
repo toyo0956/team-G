@@ -8,15 +8,14 @@
     .items-buy-container__content
       .items-buy-container__content__show
         .items-buy-container__content__show__image
-          - if @item.image.attached?
-            = image_tag url_for(@item.image.attach(image)), width:"80px", height: "80px"
+          = image_tag @item.images.first, width:"80px", height: "80px"
         .items-buy-container__content__show__details
           %p #{@item.name}
           %p ¥#{@item.price}
           %p (税込) 送料込み
     .items-buy-container__settlement
       .items-buy-container__settlement__wrap
-        = form_for(@item, url: item_path(@item)) do |f|
+        = form_for @item, url: pay_item_purchase_path(@item), method: :post do |f|
           .items-buy-container__settlement__wrap__price
             %ul
               %li 支払い金額
@@ -33,7 +32,7 @@
               %li ***********2019
               %li 有効期限 12/21
               %li
-                = image_tag asset_path("Visa_2014_logo_detail.svg.png"), width: "50px", height: "15px"
+                = image_tag asset_path(""), width: "50px", height: "15px"
           .items-buy-container__settlement__wrap__delivery
             = link_to "変更する", ""
             %ul

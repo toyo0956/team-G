@@ -15,20 +15,22 @@ Rails.application.routes.draw do
   end
   root to: 'items#index'
 
-  resources :items, only: [:new] do
-  member do
-    get "buy"
+  resources :items do
+    resources :purchase, only: :show do
+      member do
+        post "pay", to: 'purchase#pay'
+      end
     end
   end
-  resources :users do
-   member do
-    get "logout"
-    get "profile"
-    get "userinfo"
-    get "cardlist"
-   end
-  end
 
-  resources :items
+
+  resources :users do
+    member do
+      get "logout"
+      get "profile"
+      get "userinfo"
+      get "cardlist"
+    end
+  end
 
 end
