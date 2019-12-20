@@ -6,7 +6,7 @@
   .main
     .main-item-details
       .main-item__header
-        %h COACHのショルダーバッグ
+        = simple_format @item.name
       .main-item
         .main-item-left-pic
           = image_tag @item.images.first, class: 'main-pic'

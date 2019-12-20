@@ -19,8 +19,10 @@
         height: 100px;
         text-align: center;
         line-height: 100px;
-        font-weight: bold;
-        font-size: 22px;
+        p {
+          font-weight: bold;
+          font-size: 22px;
+        }
       }
       .main-item {
         width: 86%;
