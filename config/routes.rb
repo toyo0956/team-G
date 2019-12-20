@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   end
   root to: 'items#index'
 
-  resources :items, only: [:new]
+  resources :items, only: [:new] do
+  member do
+    get "buy"
+    end
+  end
   resources :users do
    member do
     get "logout"

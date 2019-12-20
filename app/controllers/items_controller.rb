@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-
-  before_action :set_item, only: [:edit, :update, :show, :destroy]
+  before_action :set_item, only: [:edit, :update, :show, :destroy, :buy]
 
 
   def index
@@ -12,6 +11,11 @@ class ItemsController < ApplicationController
       redirect_to new_user_session_path
     end
     @item = Item.new
+  end
+
+  def buy
+    @items = Item.all
+    @item = Item.find(params[:id])
   end
 
   def create
@@ -49,7 +53,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region_id, :category, :days, :price, images: []).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region_id, :category, :days, :price, :image, images: []).merge(user_id: current_user.id)
   end
 
   def set_item
