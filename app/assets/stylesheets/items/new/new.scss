@@ -27,6 +27,9 @@
         border-bottom: 1px solid $light_gray;
         color: #333;
         padding: 40px 35px 20px;
+        .image-boxes {
+          height: 200px;
+        }
         form {
           height: 100%;
         }
@@ -77,12 +80,93 @@
           outline: none;
           border-color: $light_blue;
         }
-        .image_box {
+        .item-num-0{
           width: 100%;
           height: 150px;
           background-color: $light_gray;
           border: 1px dashed $gray;
           position: relative;
+          display: block;
+        }
+        .item-num-1{
+          width: 495px;
+          display: inline-block;
+          float: right;
+          height: 150px;
+          background-color: $light_gray;
+          border: 1px dashed $gray;
+          position: relative;
+        }
+        .item-num-2{
+          width: 370px;
+          display: inline-block;
+          float: right;
+          background-color: $light_gray;
+          border: 1px dashed $gray;
+          position: relative;
+        }
+        .item-num-3{
+          width: 240px;
+          display: inline-block;
+          float: right;
+          background-color: $light_gray;
+          border: 1px dashed $gray;
+          position: relative;
+        }
+        .item-num-4{
+          width: 112px;
+          display: inline-block;
+          float: right;
+          background-color: $light_gray;
+          border: 1px dashed $gray;
+          position: relative;
+          .image-placeholder{
+            width: 80%;
+            height: 100%;
+            margin: 15px 0;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            pointer-events: none;
+            h3 {
+              font-weight: 600;
+            }
+          }
+        }
+        .item-image {
+          display: inline-block;
+          margin: 0 5px;
+          &__operation {
+            color: $light_blue;
+            margin: 1px 10px;
+            &--edit {
+              display: inline-block;
+            }
+            &--edit:hover {
+              opacity: 0.7;
+            }
+            &--delete {
+              display: inline-block;
+              float: right;
+            }
+            &--delete:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+        .image-placeholder{
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform: translate(-50%,-50%);
+          text-align: center;
+          pointer-events: none;
+          h3 {
+            font-weight: 600;
+          }
+        }
+        .form__mask__image{ 
+          width:100%;
+          display: inline-block;
           .image-placeholder{
             position: absolute;
             top:50%;
@@ -94,23 +178,18 @@
               font-weight: 600;
             }
           }
-          .form__mask__image{ 
+          input{
             width:100%;
-            height:148px;
-            display: inline-block;
-            input{
-              width:100%;
-              height: 100%;
-              visibility: hidden;
-              &:focus {
-                outline: none;
-                border:1px solid $light_blue;
-              }
+            height: 148px;
+            visibility: hidden;
+            &:focus {
+              outline: none;
+              border:1px solid $light_blue;
             }
           }
-          .form__mask__image:hover {
-            cursor: pointer;
-          }
+        }
+        .form__mask__image:hover {
+          cursor: pointer;
         }
         .image_box:hover {
           cursor: pointer;
