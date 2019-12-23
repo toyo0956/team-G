@@ -48,7 +48,7 @@ $(document).on('turbolinks:load', function() {
           $('#step2').addClass($s1_second);
           $('#step3').addClass($s1_second);
           $('#step4').addClass($s1_second);
-          $('#done').addClass($s1);
+          $('#done').addClass("radius-active_last");
           $('#progress-bar_done').addClass(ta);
           } else {
           $('#progress-bar_done').removeClass(ta);
