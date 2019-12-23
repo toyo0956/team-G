@@ -5,21 +5,18 @@ header {
   box-sizing: border-box;
   .top-page__header {
     margin: 0 auto;
-    max-width:1020px;
-    width:100%;
+    padding: 10px 15% 0;
     height: 100%;
-    padding-top:8px;
     &-above {
       height: 45%;
       display: flex;
       position: relative;
-      .header-logo {
+      a {
         float: left;
         width: 15%;
         height: 100%;
       }
       .search-box {
-        position: relative;
         width: 83%;
         height: 90%;
         background-color: $light_gray;
@@ -27,21 +24,12 @@ header {
         padding: 0 10px;
         border-radius: 5px;
         font-size: 16px;
-
-        &:focus {
-          outline: none;
-          border: 1px solid rgb(0,149,238);
-        }
       }
       i {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        right: 0;
-        width:40px;
-        height:40px;
-        text-align: center;
-        line-height: 40px;
+        right: 15px;
       }
       i:hover {
         cursor: pointer;
