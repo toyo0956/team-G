@@ -18,7 +18,7 @@
               %th 出品者
               %td
                 = link_to '#' do
-                  = @item.user.nickname
+                  = @item.seller.nickname
                 .three-faces
                   %i.fas.fa-grin
                   %span 29
@@ -66,7 +66,7 @@
           = @item.price
           %span (税込)
           %span.postage 送料込み
-        - if user_signed_in? && current_user.id == @item.user_id
+        - if user_signed_in? && current_user.id == @item.seller_id
           = link_to '商品の編集', edit_item_path(@item), class: 'item-edit-btn'
           %p.item-select-or or
           = link_to '出品を一旦停止する', '#', class: 'item-stop-btn'
@@ -117,7 +117,7 @@
             %i.fab.fa-pinterest-square
 
     %p.items-box__header 
-      = link_to "#{@item.user.nickname}さんのその他の出品", '#'
+      = link_to "#{@item.seller.nickname}さんのその他の出品", '#'
     .user-items
       %ul.items-box
         %li.item-box

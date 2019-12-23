@@ -2,7 +2,8 @@ class Item < ApplicationRecord
   has_many_attached :images 
   validates :name, :description, :category, :condition, :feepayer, :method, :region_id, :days, :price, presence: true
 
-  belongs_to :user
+  belongs_to :seller, class_name: "User"
+  belongs_to :buyer, optional:true, class_name: "User"
   
   validate :images_validate
   validate :image_max_length
