@@ -14,6 +14,9 @@ class PurchaseController < ApplicationController
       :customer => @card.customer_id,
       :currency => 'jpy',
     )
+    item = Item.find(params[:id])
+    item.update_attributes(buyer_id: current_user.id)
+
     redirect_to root_path, notice: "#{@item.name}を購入しました。"
   end
 

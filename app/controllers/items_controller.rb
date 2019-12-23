@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
 
 
   def index
-    @items = Item.all
+    @items = Item.where(buyer_id: nil)
   end
   
   def new
@@ -39,6 +39,7 @@ class ItemsController < ApplicationController
   end
   
   def show
+    @item = Item.find(params[:id])
   end
 
   def destroy
@@ -53,7 +54,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region_id, :category, :days, :price, :image, images: []).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :description, :condition, :feepayer, :method, :region_id, :category, :days, :price, :image, images: []).merge(seller_id: current_user.id)
   end
 
   def set_item
