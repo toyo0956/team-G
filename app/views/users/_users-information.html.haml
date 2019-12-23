@@ -2,7 +2,7 @@
   .mypage-information__header
     = link_to "" do
       .mypage-information__header__profile
-        = image_tag "sample1.jpg", width:"60px", height:"60px"
+        = image_tag asset_path("sample1.jpg"), width:"60px", height:"60px"
         = simple_format @user.nickname
         .mypage-information__header__profile__transaction
           %p
