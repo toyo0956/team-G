@@ -35,7 +35,7 @@
   height:60px;
   box-sizing: content-box;
   text-align:center;
-  background-image: url("header-bg.jpeg");
+  background-image: asset_url("header-bg.jpeg");
 
   &__icon img {
     border-radius: 50%;
