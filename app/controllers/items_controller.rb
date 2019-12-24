@@ -1,15 +1,12 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:edit, :update, :show, :destroy, :buy]
-
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @items = Item.where(buyer_id: nil)
   end
   
   def new
-    unless user_signed_in?
-      redirect_to new_user_session_path
-    end
     @item = Item.new
   end
 
@@ -28,13 +25,20 @@ class ItemsController < ApplicationController
   end 
   
   def edit
+    unless current_user.id === @item.seller_id
+      redirect_to root_path
+    end
   end
 
   def update
-    if @item.update(item_params)
-      redirect_to root_path
+    if current_user.id === @item.seller_id
+      if @item.update(item_params)
+        redirect_to root_path
+      else
+        render edit_item_path
+      end
     else
-      render edit_item_path
+      redirect_to root_path
     end
   end
   
@@ -43,12 +47,16 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.destroy
-      attachments = ActiveStorage::Attachment.where(id: params[:deleted_img_ids])
-      attachments.map(&:purge)
-      redirect_to root_path
+    if current_user.id === @item.seller_id
+      if @item.destroy
+        attachments = ActiveStorage::Attachment.where(id: params[:deleted_img_ids])
+        attachments.map(&:purge)
+        redirect_to root_path
+      else
+        render items_path
+      end
     else
-      render items_path
+      redirect_to root_path
     end
   end
 
